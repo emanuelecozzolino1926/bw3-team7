@@ -1,23 +1,34 @@
-import { Container } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import InformationProfile from "./InformationProfile";
 import Banner from "./Banner";
 import Attivita from "./Attivita";
-import Esperienza from "./Esperienza"
-import Formazione from "./Formazione"
+import Esperienza from "./Esperienza";
+import Formazione from "./Formazione";
 import LicenzeCertificazioni from "./LicenzeCertificazioni";
 import Volontariato from "./Volontariato";
+import ColonnaDestra from "./ColonnaDestra";
 
 const ProfilePage = function () {
   return (
     <>
-      <Container>
-        <Banner />
-        <InformationProfile />
-        <Attivita />
-        <Esperienza />
-        <Formazione />
-        <LicenzeCertificazioni />
-        <Volontariato />
+      <Container className="p-0 p-md-2">
+        <Row className="mt-3">
+          <div className="col col-12  col-xl-9 p-0">
+            <Banner />
+            <InformationProfile />
+            <Attivita />
+            <Esperienza />
+            <Formazione />
+            <LicenzeCertificazioni />
+            <Volontariato />
+          </div>
+          <div className="col d-none d-xl-block col-xl-3">
+            <hr className="m-0 mb-2" />
+            <ColonnaDestra title="People also viewed" people={5} />
+            <ColonnaDestra title="People you may know" people={5} />
+            <ColonnaDestra title="You might like" people={2} />
+          </div>
+        </Row>
       </Container>
     </>
   );

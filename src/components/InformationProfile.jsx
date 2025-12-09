@@ -5,11 +5,11 @@ const InformationProfile = () => {
   const [profileData, setProfileData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  const apiUrl = "https://striveschool-api.herokuapp.com/api/profile/me";
+  const apiUrl = "https://striveschool-api.herokuapp.com/api/profile";
   const apiKey =
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTM3ZmU0NWQzMjJmNTAwMTUxMDc2YzIiLCJpYXQiOjE3NjUyNzcyNTMsImV4cCI6MTc2NjQ4Njg1M30.6vFhBSWn_BZLNsof5SqbWvb4UQfXAP1wchtNpfCrZmI";
 
-  const getAbout = async () => {
+  const getAbout = () => {
     fetch(apiUrl, {
       headers: {
         Authorization: `Bearer ${apiKey}`,
@@ -40,27 +40,22 @@ const InformationProfile = () => {
   }, []);
 
   return (
-    <>
-      <Row className="my-3">
-        <Col
-          xs={12}
-          md={10}
-          xl={8}
-          className="bg-white border border-2 rounded-2 p-3"
-        >
-          <h5 className="fw-normal">Informazioni</h5>
-          {isLoading ? (
-            <Spinner animation="border" variant="primary" />
-          ) : profileData ? (
-            <div>
-              <p>{profileData.bio}</p>
-            </div>
-          ) : (
-            <p>Impossibile caricare le informazioni del profilo.</p>
-          )}
-        </Col>
-      </Row>
-    </>
+    <Col
+      xs={12}
+      md={10}
+      xl={8}
+      className="bg-white border border-2 rounded-2 p-3 flex-grow-1 w-100 my-3">
+      <h5 className="fw-normal">Informazioni</h5>
+      {isLoading ? (
+        <Spinner animation="border" variant="primary" />
+      ) : profileData ? (
+        <div>
+          <p>{profileData.bio}</p>
+        </div>
+      ) : (
+        <p>Impossibile caricare le informazioni del profilo.</p>
+      )}
+    </Col>
   );
 };
 
