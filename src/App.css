@@ -1,0 +1,11 @@
+#basic-nav-dropdown.dropdown-toggle::after {
+  display: none;
+}
+#icon,
+#NavSpan {
+  font-size: 13px;
+}
+#search {
+  width: 50vw;
+  max-width: 100%;
+}
