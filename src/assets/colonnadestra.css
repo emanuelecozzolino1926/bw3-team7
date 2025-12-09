@@ -1,0 +1,17 @@
+#description {
+  font-size: 14px;
+}
+
+#container-description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+#illumina {
+  cursor: pointer;
+  &:hover {
+    background-color: #f4f2ee;
+  }
+}

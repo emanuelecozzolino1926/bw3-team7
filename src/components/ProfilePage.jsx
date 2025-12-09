@@ -12,8 +12,8 @@ const ProfilePage = function () {
   return (
     <>
       <Container className="p-0 p-md-2">
-        <Row>
-          <div className="col col-12  col-xl-8 p-0">
+        <Row className="mt-3">
+          <div className="col col-12  col-xl-9 p-0">
             <Banner />
             <InformationProfile />
             <Attivita />
@@ -22,7 +22,10 @@ const ProfilePage = function () {
             <LicenzeCertificazioni />
             <Volontariato />
           </div>
-          <div className="col d-none d-xl-block col-xl-4">
+          <div className="col d-none d-xl-block col-xl-3">
+            <hr className="m-0 mb-2" />
+            <ColonnaDestra />
+            <ColonnaDestra />
             <ColonnaDestra />
           </div>
         </Row>
