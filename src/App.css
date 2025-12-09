@@ -9,3 +9,9 @@
   width: 50vw;
   max-width: 100%;
 }
+body,
+html,
+#root {
+  min-height: 100vh;
+  background-color: #eae6df;
+}

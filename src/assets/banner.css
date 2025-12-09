@@ -1,0 +1,45 @@
+a {
+  text-decoration: none;
+  color: #0a66c2;
+  font-weight: bold;
+}
+.img-container {
+  height: 24.8rem;
+  max-height: 24.8rem;
+  width: 100%;
+}
+
+#pic {
+  position: absolute;
+  bottom: 0px;
+  left: 20px;
+  border-radius: 50%;
+  border: 5px solid white;
+}
+
+#connect {
+  background-color: #0a66c2;
+  transition: 200ms ease-in-out;
+  &:hover {
+    background-color: rgb(15, 15, 177);
+  }
+}
+
+#message {
+  border: 1px solid #0a66c2;
+  color: #0a66c2;
+  transition: 200ms ease-in-out;
+  &:hover {
+    border: 1px solid rgba(15, 15, 177, 0.822);
+    box-shadow: inset 0 0 0 3px rgba(15, 15, 177, 0.822);
+    background-color: rgba(15, 15, 177, 0.082);
+    color: rgb(15, 15, 177);
+  }
+}
+
+#dots {
+  transition: 200ms ease-in-out;
+  &:hover {
+    box-shadow: inset 0 0 0 3px rgba(0, 0, 0, 0.822);
+  }
+}
