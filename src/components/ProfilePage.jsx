@@ -23,6 +23,9 @@ const ProfilePage = function () {
             <Volontariato />
           </div>
           <div className="col d-none d-xl-block col-xl-3">
+            <hr className="m-0 mb-2" />
+            <ColonnaDestra />
+            <ColonnaDestra />
             <ColonnaDestra />
           </div>
         </Row>

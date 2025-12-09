@@ -3,9 +3,9 @@ import "../assets/colonnadestra.css";
 const ColonnaDestra = () => {
   return (
     <>
-      <hr className="m-0 mb-2" />
-      <div className="bg-light rounded-3 border-secondary border border-opacity-25">
-        <h3 className="px-4 pt-3">People also viewed</h3>
+      
+      <div className="bg-light rounded-3 border-secondary border border-opacity-25 mb-2">
+        <h4 className="px-4 pt-4 mb-3">People also viewed</h4>
         <div>
           <div className="d-flex align-items-start px-3 gap-2">
             <img
@@ -26,7 +26,7 @@ const ColonnaDestra = () => {
               <i class="bi bi-person-plus-fill"></i> Connect
             </button>
           </div>
-          <hr className="mx-4" />
+          <hr className="ms-4" />
         </div>
         <div>
           <div className="d-flex align-items-start px-3 gap-2">
@@ -48,7 +48,7 @@ const ColonnaDestra = () => {
               <i class="bi bi-person-plus-fill"></i> Connect
             </button>
           </div>
-          <hr className="mx-4" />
+          <hr className="ms-4" />
         </div>
         <div>
           <div className="d-flex align-items-start px-3 gap-2">
@@ -70,7 +70,7 @@ const ColonnaDestra = () => {
               <i class="bi bi-person-plus-fill"></i> Connect
             </button>
           </div>
-          <hr className="mx-4" />
+          <hr className="ms-4" />
         </div>
         <div>
           <div className="d-flex align-items-start px-3 gap-2">
@@ -92,7 +92,7 @@ const ColonnaDestra = () => {
               <i class="bi bi-person-plus-fill"></i> Connect
             </button>
           </div>
-          <hr className="mx-4" />
+          <hr className="ms-4" />
         </div>
         <div>
           <div className="d-flex align-items-start px-3 gap-2">
