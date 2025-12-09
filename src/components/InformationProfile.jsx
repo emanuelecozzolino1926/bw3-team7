@@ -5,7 +5,7 @@ const InformationProfile = () => {
   const [profileData, setProfileData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  const apiUrl = "https://striveschool-api.herokuapp.com/api/profile";
+  const apiUrl = "https://striveschool-api.herokuapp.com/api/profile/me";
   const apiKey =
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTM3ZmU0NWQzMjJmNTAwMTUxMDc2YzIiLCJpYXQiOjE3NjUyNzcyNTMsImV4cCI6MTc2NjQ4Njg1M30.6vFhBSWn_BZLNsof5SqbWvb4UQfXAP1wchtNpfCrZmI";
 
@@ -44,7 +44,8 @@ const InformationProfile = () => {
       xs={12}
       md={10}
       xl={8}
-      className="bg-white border border-2 rounded-2 p-3 flex-grow-1 w-100 my-3">
+      className="bg-white border border-2 rounded-2 p-3 flex-grow-1 w-100 my-3"
+    >
       <h5 className="fw-normal">Informazioni</h5>
       {isLoading ? (
         <Spinner animation="border" variant="primary" />
