@@ -46,7 +46,7 @@ const InformationProfile = () => {
           xs={12}
           md={10}
           xl={8}
-          className="bg-white border border-2 rounded-2 p-3"
+          className="bg-white border border-2 rounded-2 p-3 flex-grow-1"
         >
           <h5 className="fw-normal">Informazioni</h5>
           {isLoading ? (
