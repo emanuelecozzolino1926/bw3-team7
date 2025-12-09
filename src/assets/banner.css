@@ -1,0 +1,22 @@
+.img-container {
+  height: 24.8rem;
+  max-height: 24.8rem;
+  width: 100%;
+}
+
+#pic {
+  position: absolute;
+  bottom: 0px;
+  left: 20px;
+  border-radius: 50%;
+  border: 5px solid white;
+}
+
+#connect {
+  background-color: #0a66c2;
+}
+
+#message {
+  border: 1px solid #0a66c2;
+  color: #0a66c2;
+}

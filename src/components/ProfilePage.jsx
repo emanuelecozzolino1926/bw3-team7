@@ -1,5 +1,15 @@
+import { Container } from "react-bootstrap";
+import InformationProfile from "./InformationProfile";
+import Banner from "./Banner";
 
-const ProfilePage= function () {
-    return (<div></div>)
+const ProfilePage = function () {
+  return (
+    <>
+      <Container>
+        <Banner />
+        <InformationProfile />
+      </Container>
+    </>
+  );
 };
-export default ProfilePage
+export default ProfilePage;
