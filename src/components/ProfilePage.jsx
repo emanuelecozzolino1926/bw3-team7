@@ -1,11 +1,11 @@
 import { Container } from "react-bootstrap";
 import InformationProfile from "./InformationProfile";
 import Banner from "./Banner";
-import Attivita from "./components/Attivita";
-import Esperienza from "./components/Esperienza";
-import Formazione from "./components/Formazione"
-import LicenzeCertificazioni from "./components/LicenzeCertificazioni";
-import Volontariato from "./components/Volontariato";
+import Attivita from "./Attivita";
+import Esperienza from "./Esperienza"
+import Formazione from "./Formazione"
+import LicenzeCertificazioni from "./LicenzeCertificazioni";
+import Volontariato from "./Volontariato";
 
 const ProfilePage = function () {
   return (
