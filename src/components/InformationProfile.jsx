@@ -41,8 +41,13 @@ const InformationProfile = () => {
 
   return (
     <>
-      <Row className="justify-content-center p-3 bg-white border-bottom">
-        <Col xs={12} md={10} lg={8}>
+      <Row className="my-3">
+        <Col
+          xs={12}
+          md={10}
+          xl={8}
+          className="bg-white border border-2 rounded-2 p-3"
+        >
           <h5 className="fw-normal">Informazioni</h5>
           {isLoading ? (
             <Spinner animation="border" variant="primary" />
