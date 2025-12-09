@@ -13,7 +13,7 @@ const ProfilePage = function () {
     <>
       <Container className="p-0 p-md-2">
         <Row>
-          <div className="col col-12  col-xl-8">
+          <div className="col col-12  col-xl-8 p-0">
             <Banner />
             <InformationProfile />
             <Attivita />
