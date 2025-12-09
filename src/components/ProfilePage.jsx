@@ -24,9 +24,9 @@ const ProfilePage = function () {
           </div>
           <div className="col d-none d-xl-block col-xl-3">
             <hr className="m-0 mb-2" />
-            <ColonnaDestra />
-            <ColonnaDestra />
-            <ColonnaDestra />
+            <ColonnaDestra title="People also viewed" />
+            <ColonnaDestra title="People you may know" />
+            <ColonnaDestra title="You might like" />
           </div>
         </Row>
       </Container>

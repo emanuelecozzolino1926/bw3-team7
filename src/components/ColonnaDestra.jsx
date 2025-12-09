@@ -1,11 +1,10 @@
 import "../assets/colonnadestra.css";
 
-const ColonnaDestra = () => {
+const ColonnaDestra = ({ title }) => {
   return (
     <>
-      
       <div className="bg-light rounded-3 border-secondary border border-opacity-25 mb-2">
-        <h4 className="px-4 pt-4 mb-3">People also viewed</h4>
+        <h4 className="px-4 pt-4 mb-3">{title}</h4>
         <div>
           <div className="d-flex align-items-start px-3 gap-2">
             <img
