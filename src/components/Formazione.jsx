@@ -10,7 +10,7 @@ const Esperienza = () => {
                 xs={12}
                 md={10}
                 xl={8}
-                className="bg-white border border-2 rounded-2 p-0 mb-3"
+                className="bg-white border border-2 rounded-2 p-0 mb-3 flex-grow-1"
             >
                 <Card className="text-center">
                     <Card.Body>
