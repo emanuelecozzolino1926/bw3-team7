@@ -13,7 +13,6 @@ const ColonnaDestra = ({ title, people }) => {
               alt="pic-profile"
               className="rounded-5"
             />
-
             <div className="container-description">
               <h6 className="m-0">Riccardo Gulin</h6>
               <p className="m-0 description">
