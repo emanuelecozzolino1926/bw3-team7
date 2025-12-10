@@ -386,14 +386,13 @@ const Esperienza = () => {
           </div>
         </Card.Title>
 
-        <Card.Text>
+      
           {expData?.map((item) => (
             <div key={item._id}>
               <SingleEsperienzaCard exp={item} />
               <hr />
             </div>
           ))}
-        </Card.Text>
       </Card.Body>
     </Card>
   );

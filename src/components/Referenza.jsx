@@ -11,12 +11,10 @@ const Referenza = () => {
                     <h3 className="m-0">Referenze</h3>
                     
                 </Card.Title>
-                <Card.Text className="">
                     <SingleReferenzaCard />
                     <hr />
                     
                     <SingleReferenzaCard />
-                </Card.Text>
             </Card.Body>
         </Card>
     )

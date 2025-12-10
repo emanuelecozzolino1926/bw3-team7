@@ -191,8 +191,8 @@ const Navbar1 = function () {
                 }
                 className="ms-2"
                 id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">
-                  <Link to={"/profile"}>Visualizza profilo</Link>
+                <NavDropdown.Item as={Link} to={"/profile"} >
+                Visualizza profilo
                 </NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">
                   Another action

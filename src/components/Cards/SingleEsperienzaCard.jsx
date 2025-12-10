@@ -18,13 +18,13 @@ const SingleEsperienzaCard = (props) => {
           <div className="text-start">
             <p className="fw-bold m-0">{props.exp.role}</p>
             <p className="m-0">
-              <i class="bi bi-building-fill"> </i>
+              <i className="bi bi-building-fill"> </i>
               {props.exp.company} -{" "}
               {props.exp.description || "Nessuna descrizione inserita"}
             </p>
             <p className="m-0"></p>
             <p className="text-secondary m-0">
-              {props.exp.startDate} <i class="bi bi-arrow-right-short"></i>
+              {props.exp.startDate} <i className="bi bi-arrow-right-short"></i>
               {props.exp.endDate || "Attuale"}
             </p>
             <p className="text-secondary m-0">{props.exp.area}</p>

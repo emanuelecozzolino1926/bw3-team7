@@ -16,7 +16,7 @@ const SingleInteressiCard = () => {
                         </div>
                         </div>
                         <div className='text-start'>
-                        <button className="bg-transparent rounded-5 px-2 py-1 ms-5 mt-0"><i class="bi bi-plus"></i> Segui</button>
+                        <button className="bg-transparent rounded-5 px-2 py-1 ms-5 mt-0"><i className="bi bi-plus"></i> Segui</button>
                         </div>
                     
                     
@@ -33,7 +33,7 @@ const SingleInteressiCard = () => {
                         </div>
                         </div>
                         <div className=' text-start'>
-                        <button className="bg-transparent rounded-5 px-2 py-1 ms-5 mt-0"><i class="bi bi-plus"></i> Segui</button>
+                        <button className="bg-transparent rounded-5 px-2 py-1 ms-5 mt-0"><i className="bi bi-plus"></i> Segui</button>
                         </div>
                     
                     

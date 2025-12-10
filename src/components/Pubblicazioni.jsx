@@ -9,9 +9,7 @@ const Pubblicazioni = () => {
                 <Card.Title className="text-start mb-4">
                     <h3 className="m-0"> Pubblicazioni</h3>
                 </Card.Title>
-                <Card.Text className="">
                     <SinglePubblicazioniCard/>
-                </Card.Text>
             </Card.Body>
         </Card>
     )
