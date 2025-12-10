@@ -17,7 +17,6 @@ const Referenza = () => {
                 </Card.Title>
                 <SingleReferenzaCard />
                 <hr />
-
                 <SingleReferenzaCard />
             </Card.Body>
         </Card>
