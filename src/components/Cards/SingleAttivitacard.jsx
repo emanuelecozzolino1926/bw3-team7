@@ -4,9 +4,9 @@ const SingleAttivitaCard = () => {
     return (
         <Container className="mb-3">
             <Row className="d-flex justify-content-center">
-                <Col xs={2} >
+                <Col xs={2}>
                     <div >
-                        <img src="https://placedog.net/50/50" alt="doggo"></img>
+                        <img src="https://placedog.net/50/50" alt="doggo" ></img>
                     </div>
                 </Col>
                 <Col xs={10} >
