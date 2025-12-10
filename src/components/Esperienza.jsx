@@ -43,8 +43,16 @@ const Esperienza = () => {
   return (
     <Card className="text-center mb-3">
       <Card.Body>
-        <Card.Title className="text-start mb-4">
+        <Card.Title className="text-start mb-4 d-flex flex-row justify-content-between">
           <h3 className="m-0">Esperienza</h3>
+          <div>
+            <button href="#" className="me-4 text-dark fs-4 border-0 bg-white">
+              <i class="bi bi-plus-circle"></i>
+            </button>
+            <button href="#" className="me-5 text-dark fs-4 border-0 bg-white">
+              <i class="bi bi-pencil-square"></i>
+            </button>
+          </div>
         </Card.Title>
         <Card.Text className="">
           <SingleEsperienzaCard />
