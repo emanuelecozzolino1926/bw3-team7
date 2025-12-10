@@ -10,8 +10,6 @@ const Lingue = () => {
                     <h3 className="m-0"> Lingue</h3>
                 </Card.Title>
                 <SingleLinguaCard />
-                <hr />
-                <SingleLinguaCard />
             </Card.Body>
         </Card>
     )
