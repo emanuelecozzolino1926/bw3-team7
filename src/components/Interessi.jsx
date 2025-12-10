@@ -12,8 +12,8 @@ const Interessi = () => {
                     <h3 className="m-0 ms-3 mt-3">Interessi</h3>
                     <div className="border-bottom border-1 border-secondary">
                         <Button variant="link" className="referenza-buttons text-decoration-none text-dark fs-6 py-2 px-3 ms-3 border-0 rounded-0">Aziende</Button>
-                        <Button variant="link" className="referenza-buttons text-decoration-none text-dark fs-6 py-2 px-3 ms-2 border-0 rounded-0">Gruppi</Button>
-                        <Button variant="link" className="referenza-buttons text-decoration-none text-dark fs-6 py-2 px-3 ms-2 border-0 rounded-0">Scuole o università</Button>
+                        <Button variant="link" className="referenza-buttons text-decoration-none text-dark fs-6 py-2 px-3 ms-3 border-0 rounded-0">Gruppi</Button>
+                        <Button variant="link" className="referenza-buttons text-decoration-none text-dark fs-6 py-2 px-3 ms-3 border-0 rounded-0">Scuole o università</Button>
                     </div>
                 </Card.Title>
                 <SingleInteressiCard />
