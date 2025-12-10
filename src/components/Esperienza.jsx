@@ -1,6 +1,6 @@
-import SingleEsperienzaCard from './Cards/SingleEsperienzaCard';
-import Card from 'react-bootstrap/Card';
-import { Row, Col } from 'react-bootstrap';
+import SingleEsperienzaCard from "./Cards/SingleEsperienzaCard";
+import Card from "react-bootstrap/Card";
+import { Row, Col } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
@@ -75,8 +75,14 @@ const Esperienza = () => {
       }),
     })
       .then((response) => {
-        if (!response.ok) throw new Error("Errore nella POST");
-        return response.json();
+        if (response.ok) {
+          console.log(`Server connesso ${response.status}`);
+          return response.json();
+        } else {
+          throw new Error(
+            `Errore nella connessione del server ${response.status}`
+          );
+        }
       })
       .then((expData) => {
         getExp(expData);
@@ -93,7 +99,9 @@ const Esperienza = () => {
           image: "",
         });
       })
-      .catch((err) => console.log(err));
+      .catch((error) => {
+        console.log(`Impossibile accedere al server ${error}`);
+      });
   };
 
   useEffect(() => {
@@ -242,13 +250,6 @@ const Esperienza = () => {
                 </Button>
               </Modal.Footer>
             </Modal>
-
-            <Button
-              className="me-5 text-dark fs-4 border-0 bg-white"
-              onClick={handleShow}
-            >
-              <i className="bi bi-pencil-square"></i>
-            </Button>
 
             <Modal show={show} onHide={handleClose}>
               <Modal.Header closeButton>
