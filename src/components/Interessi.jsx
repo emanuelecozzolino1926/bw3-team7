@@ -1,6 +1,5 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { Row, Col } from 'react-bootstrap';
 import SingleInteressiCard from './Cards/SingleInteressiCard';
 import "../assets/ButtonsHover.css";
 
@@ -17,12 +16,11 @@ const Interessi = () => {
                         <Button variant="link" className="referenza-buttons text-decoration-none text-dark fs-6 py-2 px-3 ms-2 border-0 rounded-0">Scuole o università</Button>
                     </div>
                 </Card.Title>
-                <Card.Text>
-                    <SingleInteressiCard />
-                </Card.Text>
+                <SingleInteressiCard />
+
             </Card.Body>
             <Card.Footer className="text-muted">
-                <Button variant="light" className="w-100 text-black bg-light border-0 rounded-0">Mostra tutte le aziende <i class="bi bi-arrow-right-short"></i></Button>
+                <Button variant="light" className="w-100 text-black bg-light border-0 rounded-0">Mostra tutte le aziende <i className="bi bi-arrow-right-short"></i></Button>
             </Card.Footer>
         </Card>
     )

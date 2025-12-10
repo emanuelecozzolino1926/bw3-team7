@@ -10,9 +10,7 @@ const Formazione = () => {
                 <Card.Title className="text-start mb-4">
                     <h3 className="m-0">Formazione</h3>
                 </Card.Title>
-                <Card.Text>
-                    <SingleFormazioneCard />
-                </Card.Text>
+                <SingleFormazioneCard />
             </Card.Body>
         </Card>
     )
