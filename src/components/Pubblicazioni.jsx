@@ -1,18 +1,18 @@
-import SingleLicenzeCertCard from './Cards/SingleLicenzeCertCard';
+import SinglePubblicazioniCard from './Cards/SinglePubblicazioniCard';
 import Card from 'react-bootstrap/Card';
 import { Row, Col } from 'react-bootstrap';
 
-const LicenzeCertificazioni = () => {
+const Pubblicazioni = () => {
     return (
         <Card className="text-center mb-3">
             <Card.Body>
                 <Card.Title className="text-start mb-4">
-                    <h3 className="m-0">Licenze e Certificazioni</h3>
+                    <h3 className="m-0"> Pubblicazioni</h3>
                 </Card.Title>
-                <SingleLicenzeCertCard />
+                <SinglePubblicazioniCard />
             </Card.Body>
         </Card>
     )
 }
 
-export default LicenzeCertificazioni
+export default Pubblicazioni

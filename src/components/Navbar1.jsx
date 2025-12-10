@@ -108,55 +108,72 @@ const Navbar1= function (){
            <NavDropdown title={<div className="d-flex flex-column align-items-center">
       <img style={{width:'20px',height:'20px'}}
             src={profileData?.image}
-            alt="pic-profile"
-            className="rounded-circle"
-          />
- <div className="d-flex align-items-center">
-      <span id='NavSpan'>Tu</span>
-      <span  className="ms-1">{/* caret simbolico */}
-          ▼
-        </span></div></div>
-    } className='ms-2' id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1"><Link to={'/profile'}>Visualizza profilo</Link></NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown></Col>
-            <Col className='d-none d-lg-inline'>
-           <NavDropdown title={<div className="d-flex flex-column align-items-center">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-grid-3x3-gap-fill" viewBox="0 0 16 16">
-  <path d="M1 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zM1 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zM1 12a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z"/>
-</svg>
- <div className="d-flex align-items-center">
-      <span id='NavSpan'>Per le aziende</span>
-      <span className="ms-1">{/* caret simbolico */}
-          ▼
-        </span></div></div>
-    }
-     className='ms-2'
-    id="basic-nav-dropdown"
-    >
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown></Col>
+                      alt="pic-profile"
+                      className="rounded-circle"
+                    />
+                    <div className="d-flex align-items-center">
+                      <span id="NavSpan">Tu</span>
+                      <span className="ms-1">{/* caret simbolico */}▼</span>
+                    </div>
+                  </div>
+                }
+                className="ms-2"
+                id="basic-nav-dropdown">
+                <NavDropdown.Item as={Link} to={"/profile"} >
+                Visualizza profilo
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">
+                  Another action
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">
+                  Something
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="#action/3.4">
+                  Separated link
+                </NavDropdown.Item>
+              </NavDropdown>
+            </Col>
+            <Col className="d-none d-lg-inline">
+              <NavDropdown
+                title={
+                  <div className="d-flex flex-column align-items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      fill="currentColor"
+                      className="bi bi-grid-3x3-gap-fill"
+                      viewBox="0 0 16 16">
+                      <path d="M1 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zM1 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zM1 12a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z" />
+                    </svg>
+                    <div className="d-flex align-items-center">
+                      <span id="NavSpan">Per le aziende</span>
+                      <span className="ms-1">{/* caret simbolico */}▼</span>
+                    </div>
+                  </div>
+                }
+                className="ms-2"
+                id="basic-nav-dropdown">
+                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">
+                  Another action
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">
+                  Something
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="#action/3.4">
+                  Separated link
+                </NavDropdown.Item>
+              </NavDropdown>
+            </Col>
           </Row>
-          
-</div>
-{/* fine icone ------------------------------------------------------------------------ */}
-    </Container>
-    {/* // mobile----------------------------------------------------------------------------- */}
-</>)
+        </div>
+        {/* fine icone ------------------------------------------------------------------------ */}
+      </Container>
+      {/* // mobile----------------------------------------------------------------------------- */}
+    </>
+  );
 };
-export default Navbar1
+export default Navbar1;

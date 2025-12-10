@@ -74,8 +74,7 @@ const Banner = () => {
               <Button
                 className="border-0 bg-white"
                 style={{ color: "#0A66C2", fontWeight: "bold" }}
-                onClick={handleShow}
-              >
+                onClick={handleShow}>
                 Contact info
               </Button>
 
@@ -84,7 +83,7 @@ const Banner = () => {
                   <Modal.Title>Informazioni Contatto</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                  <i class="bi bi-envelope-at-fill"> </i>
+                  <i className="bi bi-envelope-at-fill"> </i>
                   {profileData?.email}
                 </Modal.Body>
                 <Modal.Footer>
@@ -100,17 +99,15 @@ const Banner = () => {
         <div className="d-flex gap-2 align-items-center mb-4">
           <button
             className="px-3 rounded-5 border-0 py-2 text-light fw-bold"
-            id="connect"
-          >
-            <i class="bi bi-person-plus-fill"></i> Connect
+            id="connect">
+            <i className="bi bi-person-plus-fill"></i> Connect
           </button>
           <button className="px-3 rounded-5 py-2 fw-bold" id="message">
-            <i class="bi bi-telegram"></i> Message
+            <i className="bi bi-telegram"></i> Message
           </button>
           <button
             className="px-3 rounded-5 py-2 border border-dark fw-bold"
-            id="dots"
-          >
+            id="dots">
             ...
           </button>
         </div>
