@@ -9,7 +9,11 @@ const Navbar1= function (){
     return (<>
     {/* desktop-------------------------------------------------------------- */}
     {/* search in mobile */}
-      <div className='fixed-top d-lg-none pt-1  d-flex align-items-center justify-content-center w-100 bg-white p-1'><img/>
+      <div className='fixed-top d-lg-none pt-1  d-flex align-items-center justify-content-center w-100 bg-white p-1'><img style={{width:'50px'}}
+            src="https://massimoemanuelli.com/wp-content/uploads/2018/12/pupo-foto.jpg"
+            alt="pic-profile"
+            className="rounded-5"
+          />
       <Form className='d-inline  mx-3 '>
         <Row>
           <Col xs="auto">
@@ -65,7 +69,11 @@ const Navbar1= function (){
           </Col>
           <Col className='d-none d-lg-inline'>
            <NavDropdown title={<div className="d-flex flex-column align-items-center">
-      <img />
+      <img style={{width:'20px'}}
+            src="https://massimoemanuelli.com/wp-content/uploads/2018/12/pupo-foto.jpg"
+            alt="pic-profile"
+            className="rounded-5"
+          />
  <div className="d-flex align-items-center">
       <span id='NavSpan'>Tu</span>
       <span  className="ms-1">{/* caret simbolico */}
