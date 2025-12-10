@@ -1,3 +1,6 @@
+import SingleEsperienzaCard from './Cards/SingleEsperienzaCard';
+import Card from 'react-bootstrap/Card';
+import { Row, Col } from 'react-bootstrap';
 import { useEffect, useState } from "react";
 import SingleEsperienzaCard from "./Cards/SingleEsperienzaCard";
 import Card from "react-bootstrap/Card";

@@ -1,5 +1,6 @@
 import SingleVolontariatoCard from './Cards/SingleVolontariatoCard';
 import Card from 'react-bootstrap/Card';
+import { Row, Col } from 'react-bootstrap';
 
 const Volontariato = () => {
     return (
