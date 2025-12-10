@@ -1,19 +1,23 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.min.css";
 import "./App.css";
-import 'bootstrap/dist/css/bootstrap.min.css'
 import ProfilePage from "./components/ProfilePage";
 import Navbar1 from "./components/Navbar1";
 import Footer1 from "./components/Footer1";
+import Home from "./components/Home";
+import { BrowserRouter,Routes, Route } from "react-router-dom";
 
 function App() {
-  return (
-    <>
+  return (<>
+    <BrowserRouter>
     <Navbar1/>
-    <ProfilePage/>
+    <Routes>
+    <Route path="/profile" element={<ProfilePage/>}/>
+    <Route path='/home' element={<Home/>}/>
+    </Routes>
       <Footer1/>
-    </>
-  );
+    </BrowserRouter>
+  </>);
 }
 
 export default App;
