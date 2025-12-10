@@ -11,7 +11,7 @@ const Attivita = () => {
                     <h3 className="m-0">Attività</h3>
                     <p className="text-secondary m-0 mb-3">600 follower</p>
                 </Card.Title>
-                <Card.Text className="">
+                <Card.Text>
                     <SingleAttivitaCard />
                     <SingleAttivitaCard />
                     <SingleAttivitaCard />
