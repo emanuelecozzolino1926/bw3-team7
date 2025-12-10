@@ -10,9 +10,9 @@ const Compentenza = () => {
                 <Card.Title className="text-start mb-4">
                     <h3 className="m-0">Competenze</h3>
                 </Card.Title>
-                    <SingleCompentenzeCard />
-                    <hr />
-                    <SingleCompentenzeCard />
+                <SingleCompentenzeCard />
+                <hr />
+                <SingleCompentenzeCard />
             </Card.Body>
             <Card.Footer className="text-muted">
                 <Button variant="light" className="w-100 text-black bg-light border-0 rounded-0">Mostra tutte le compentenze <i className="bi bi-arrow-right-short"></i></Button>

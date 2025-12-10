@@ -9,7 +9,7 @@ const LicenzeCertificazioni = () => {
                 <Card.Title className="text-start mb-4">
                     <h3 className="m-0">Licenze e Certificazioni</h3>
                 </Card.Title>
-                    <SingleLicenzeCertCard />
+                <SingleLicenzeCertCard />
             </Card.Body>
         </Card>
     )
