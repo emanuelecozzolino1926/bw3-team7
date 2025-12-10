@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 
 const ColonnaDestra = ({ title, people }) => {
   const [users, setUsers] = useState(null);
+  const [connectedId, setConnectedId] = useState(null);
 
   const URL = "https://striveschool-api.herokuapp.com/api/profile";
   const KEY =
@@ -27,9 +28,9 @@ const ColonnaDestra = ({ title, people }) => {
         return r.json();
       })
       .then((d) => {
-        const shuffled = shuffleArray(d);
+        const shuffled = shuffleArray(d.slice(-50));
         setUsers(shuffled);
-        console.log(d.slice(-50));
+        console.log(shuffled);
       })
       .catch((e) => {
         console.log(`Siamo nel catch: ${e}`);
@@ -57,8 +58,13 @@ const ColonnaDestra = ({ title, people }) => {
             </div>
           </div>
           <div className="text-center mb-3 pe-5">
-            <button className="bg-transparent rounded-5 px-3 py-1 fw-bold">
-              <i className="bi bi-person-plus-fill"></i> Connect
+            <button
+              onClick={() => {
+                setConnectedId(user._id);
+              }}
+              className="bg-transparent rounded-5 px-3 py-1 fw-bold">
+              <i className="bi bi-person-plus-fill"></i>
+              {connectedId === user._id ? "Connected" : "Connect"}
             </button>
           </div>
           {i !== people - 1 && <hr className="ms-4" />}
