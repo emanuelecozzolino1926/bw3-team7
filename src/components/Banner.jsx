@@ -12,7 +12,7 @@ const Banner = () => {
         <img src="https://placebear.com/200/200" alt="profile-img" id="pic" />
       </div>
       <div className="card-body">
-        <div className="d-flex align-items-center">
+        <div className="d-flex align-items-center gap-5">
           <div>
             <div className="d-flex gap-2 align-items-center">
               <h5 className="card-title m-0 fs-2 mb-2">Stefano Casasola</h5>
