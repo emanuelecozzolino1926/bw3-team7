@@ -8,7 +8,7 @@ const SingleInteressiCard = () => {
 
                     <div className="text-start d-flex mb-2 ms-3">
                         <div className='d-inline-block'>
-                            <img src="https://placedog.net/50/50" alt="doggo" className='d-inline me-2'></img>
+                            <img src="https://pngimg.com/d/tesla_logo_PNG12.png" alt="doggo" className='d-inline me-2' style={{width:'50px',height:'50px'}}></img>
                         </div>
                         <div className='d-inline-block'>
                             <h5 className='m-0 mb-1'>Tesla</h5>
@@ -25,7 +25,7 @@ const SingleInteressiCard = () => {
 
                     <div className="text-start d-flex mb-2">
                         <div className='d-inline-block'>
-                            <img src="https://placedog.net/50/50" alt="doggo" className='d-inline me-2'></img>
+                            <img src="https://www.logo.wine/a/logo/SpaceX/SpaceX-White-Dark-Background-Logo.wine.svg" alt="spx" className='d-inline me-2' style={{width:'50px',height:'50px'}}></img>
                         </div>
                         <div className='d-inline-block'>
                             <h5 className='m-0 mb-1'>Space X</h5>
