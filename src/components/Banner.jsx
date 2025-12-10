@@ -1,8 +1,14 @@
 import "../assets/banner.css";
 import { useEffect, useState } from "react";
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
 
 const Banner = () => {
   const [profileData, setProfileData] = useState(null);
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const apiUrl = "https://striveschool-api.herokuapp.com/api/profile/me";
   const apiKey =
@@ -52,7 +58,7 @@ const Banner = () => {
         />
       </div>
       <div className="card-body">
-        <div className="d-flex align-items-center">
+        <div className="d-flex align-items-center gap-5">
           <div>
             <div className="d-flex gap-2 align-items-center">
               <h5 className="card-title m-0 fs-2 mb-2">
@@ -64,7 +70,29 @@ const Banner = () => {
             <p className="card-text m-0">{profileData?.title}</p>
             <p className="card-text m-0 d-xl-none">EPICODE .</p>
             <p className="card-text m-0 text-muted">
-              {profileData?.area} <a href="#">Contact info</a>
+              {profileData?.area}
+              <Button
+                className="border-0 bg-white"
+                style={{ color: "#0A66C2", fontWeight: "bold" }}
+                onClick={handleShow}
+              >
+                Contact info
+              </Button>
+
+              <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                  <Modal.Title>Informazioni Contatto</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                  <i class="bi bi-envelope-at-fill"> </i>
+                  {profileData?.email}
+                </Modal.Body>
+                <Modal.Footer>
+                  <Button variant="primary" onClick={handleClose}>
+                    Chiudi
+                  </Button>
+                </Modal.Footer>
+              </Modal>
             </p>
           </div>
         </div>

@@ -7,6 +7,11 @@ import Formazione from "./Formazione";
 import LicenzeCertificazioni from "./LicenzeCertificazioni";
 import Volontariato from "./Volontariato";
 import ColonnaDestra from "./ColonnaDestra";
+import Compentenza from "./Compentenza";
+import Referenza from "./Referenza";
+import Pubblicazioni from "./Pubblicazioni";
+import Lingue from "./Lingue";
+import Interessi from "./Interessi";
 
 const ProfilePage = function () {
   return (
@@ -21,6 +26,11 @@ const ProfilePage = function () {
             <Formazione />
             <LicenzeCertificazioni />
             <Volontariato />
+            <Compentenza />
+            <Referenza />
+            <Pubblicazioni/>
+            <Lingue />
+            <Interessi />
           </div>
           <div className="col d-none d-xl-block col-xl-3">
             <hr className="m-0 mb-2" />
