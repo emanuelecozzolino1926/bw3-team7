@@ -2,8 +2,6 @@ import SingleEsperienzaCard from './Cards/SingleEsperienzaCard';
 import Card from 'react-bootstrap/Card';
 import { Row, Col } from 'react-bootstrap';
 import { useEffect, useState } from "react";
-import SingleEsperienzaCard from "./Cards/SingleEsperienzaCard";
-import Card from "react-bootstrap/Card";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
