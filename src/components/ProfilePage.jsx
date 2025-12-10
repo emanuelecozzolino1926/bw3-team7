@@ -18,7 +18,7 @@ const ProfilePage = function () {
     <>
       <Container className="p-0 p-md-2">
         <Row className="mt-3">
-          <div className="col col-12  col-xl-9 p-0">
+          <div className="col col-12 col-xl-9 p-0">
             <Banner />
             <InformationProfile />
             <Attivita />
@@ -28,7 +28,7 @@ const ProfilePage = function () {
             <Volontariato />
             <Compentenza />
             <Referenza />
-            <Pubblicazioni/>
+            <Pubblicazioni />
             <Lingue />
             <Interessi />
           </div>
