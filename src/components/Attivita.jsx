@@ -18,7 +18,7 @@ const Attivita = () => {
                 </Card.Text>
             </Card.Body>
             <Card.Footer className="text-muted">
-                <Button variant="light" className="w-100 text-info bg-light border-0 rounded-0">Mostra tutte le attività</Button>
+                <Button variant="light" className="w-100 text-black bg-light border-0 rounded-0">Mostra tutte le attività<i class="bi bi-arrow-right-short"></i></Button>
             </Card.Footer>
         </Card>
     )
