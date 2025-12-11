@@ -73,9 +73,14 @@ const ColonnaDestra = ({ title, people }) => {
       ))}
 
       <div className="text-center py-3" id="illumina">
-        {people > 3 && (
+        {people > 3 ? (
           <a>
             Mostra tutto <i className="bi bi-arrow-right fw-bolder"></i>
+          </a>
+        ) : (
+          <a>
+            View all reccomandations{" "}
+            <i className="bi bi-arrow-right fw-bolder"></i>
           </a>
         )}
       </div>
