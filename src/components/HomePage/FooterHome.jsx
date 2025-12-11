@@ -21,7 +21,7 @@ const FooterHome = () => (
     </div>
     <div id="a-container" className="d-flex flex-column">
       {footerLinks.map((row, i) => (
-        <div key={i} className="d-flex justify-content-center gap-3 my-2">
+        <div key={i} className="d-flex justify-content-center gap-3 my-1">
           {row.map((link, j) => (
             <a key={j} href="#">
               {link}
