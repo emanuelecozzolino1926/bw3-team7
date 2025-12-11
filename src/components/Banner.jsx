@@ -55,7 +55,7 @@ const Banner = () => {
         </div>
       </div>
       <div className="card-body">
-        <div className="d-flex align-items-center gap-5">
+        <div className="d-flex align-items-center justify-content-between gap-5">
           <div>
             <div className="d-flex gap-2 align-items-center">
               <h5 className="card-title m-0 fs-2 mb-2">
@@ -92,20 +92,21 @@ const Banner = () => {
             </p>
           </div>
         </div>
-        <p className="py-3">500+ connections</p>
-        <div className="d-flex gap-2 align-items-center mb-4">
+        <p>500+ connections</p>
+        <div className="d-flex gap-2 align-items-center my-3">
           <button
             className="px-3 rounded-5 border-0 py-2 text-light fw-bold"
             id="connect">
-            <i className="bi bi-person-plus-fill"></i> Connect
+            <i className="bi bi-telegram me-1"></i>Messaggio
           </button>
           <button className="px-3 rounded-5 py-2 fw-bold" id="message">
-            <i className="bi bi-telegram"></i> Message
+            <i className="bi bi-person-plus-fill"></i>  Segui
           </button>
-          <button
-            className="px-3 rounded-5 py-2 border border-dark fw-bold"
-            id="dots">
+          <button className="px-3 rounded-5 py-2 border border-dark fw-bold d-md-none">
             ...
+          </button>
+          <button className="px-3 rounded-5 py-2 border border-dark fw-bold d-none d-md-block">
+            Altro
           </button>
         </div>
       </div>
