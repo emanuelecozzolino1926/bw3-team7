@@ -9,4 +9,8 @@
 
 .anchor {
   color: grey;
+  &:hover {
+    color: #0038ee;
+    text-decoration: underline;
+  }
 }
