@@ -4,17 +4,25 @@ a {
   font-weight: bold;
 }
 .img-container {
-  height: 24.8rem;
-  max-height: 24.8rem;
+  height: 22rem;
   width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .img-container {
+    height: 13.8rem;
+    width: 100%;
+  }
 }
 
 #pic {
   position: absolute;
-  bottom: 0px;
-  left: 20px;
+  bottom: -40px;
+  left: 30px;
   border-radius: 50%;
   border: 5px solid white;
+  height: 160px;
+  width: 160px;
 }
 
 #connect {

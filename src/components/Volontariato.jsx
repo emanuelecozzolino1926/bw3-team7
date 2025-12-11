@@ -10,9 +10,6 @@ const Volontariato = () => {
                     <h3 className="m-0">Volontariato</h3>
                 </Card.Title>
                 <SingleVolontariatoCard />
-                <hr />
-                <SingleVolontariatoCard />
-
             </Card.Body>
         </Card>
     )
