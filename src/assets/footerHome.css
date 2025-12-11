@@ -6,3 +6,7 @@
   font-size: 13px;
   display: inline;
 }
+
+.anchor {
+  color: grey;
+}
