@@ -14,7 +14,10 @@ const Home = function () {
             <LeftCards />
           </Col>
           <Col className="col-lg-5 col-md-8"></Col>
-          <Col className="d-none d-lg-flex col-lg-4 "></Col>
+          <Col className="d-none d-lg-block col-lg-3 ">
+            <ColonnaDestra title="Today's puzzle" people={1} />
+            <ColonnaDestra title="Add your feed" people={3} />
+          </Col>
         </Row>
       </Container>
     </>
