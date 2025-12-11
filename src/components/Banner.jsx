@@ -91,7 +91,6 @@ const Banner = () => {
               </Modal>
             </p>
           </div>
-          <div className="me-5 pe-5">ciao</div>
         </div>
         <p>500+ connections</p>
         <div className="d-flex gap-2 align-items-center my-3">
