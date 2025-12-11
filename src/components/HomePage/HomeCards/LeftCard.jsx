@@ -115,7 +115,7 @@ const LeftCards = function (){
               className="me-2 mt-3 me-2 mb-2 text-dark fs-6 border border-2 border-secondary d-flex flex-row align-items-center border-dashed w-100" style={{backgroundColor:'#e0dcdc'}}
               onClick={() => setShowAdd(true)}
             >
-              <i class="bi bi-plus me-3"></i>Esperienza
+              <i className="bi bi-plus me-3"></i>Esperienza
             </Button>
             <Modal show={showAdd} onHide={() => setShowAdd(false)}>
               <Modal.Header closeButton>

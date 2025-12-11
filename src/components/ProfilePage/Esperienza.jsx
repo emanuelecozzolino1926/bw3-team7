@@ -6,7 +6,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 
-const Esperienza = () => {
+const Esperienza = (props) => {
   const [expData, setExpData] = useState(null);
 
   const [experience, setExperience] = useState({
@@ -27,7 +27,7 @@ const Esperienza = () => {
   const apiKey =
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTM3ZmU0NWQzMjJmNTAwMTUxMDc2YzIiLCJpYXQiOjE3NjUyNzcyNTMsImV4cCI6MTc2NjQ4Njg1M30.6vFhBSWn_BZLNsof5SqbWvb4UQfXAP1wchtNpfCrZmI";
 
-  const userId = "6937fe45d322f500151076c2";
+  const userId = props.userId;
 
   const getExp = () => {
     fetch(`${apiUrl}${userId}/experiences`, {
@@ -150,8 +150,10 @@ const Esperienza = () => {
   };
 
   useEffect(() => {
-    getExp();
-  }, []);
+    if (userId) {
+      getExp();
+    }
+  }, [userId]);
 
   return (
     <Card className="text-center mb-3">
