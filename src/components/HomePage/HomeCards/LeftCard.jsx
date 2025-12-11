@@ -1,8 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useState } from "react";
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import { Container } from 'react-bootstrap';
+
 
 const LeftCards = function (){
      const [profileData, setProfileData] = useState(null);
@@ -41,9 +39,9 @@ const LeftCards = function (){
         }, []);
    
     return(
-<><div className="card  border border-secondary ms-4">
+<><div className="card  border border-secondary ms-4 rounded-3">
       <div className="img-container position-relative " style={{height:'100px'}}>
-       <div style={{backgroundColor:'grey'}}>
+       <div style={{position:'absolute',top:'60px',left:'0px'}}>
         <img
           src={profileData?.image}
           alt="profile-img"
@@ -59,8 +57,6 @@ const LeftCards = function (){
               <h5 className="card-title m-0 fs-2 mb-2">
                  {`${profileData?.name} ${profileData?.surname}`}
               </h5>
-              <i className="bi bi-volume-up-fill fs-3 " ></i>
-              <p className="m-0 text-muted">he/him</p>
             </div>
             <p className="card-text m-0">{profileData?.title}</p>
             <p className="card-text m-0 text-muted">

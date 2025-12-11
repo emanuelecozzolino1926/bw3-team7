@@ -20,3 +20,8 @@ html,
 #myNav {
   height: 55px;
 }
+@media (max-width: 992px) {
+  .primaHome {
+    margin-top: 103px !important;
+  }
+}

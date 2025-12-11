@@ -1,7 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import SingleInteressiCard from './Cards/SingleInteressiCard';
-import "../assets/ButtonsHover.css";
+import "../../assets/ButtonsHover.css";
 
 
 const Interessi = () => {
