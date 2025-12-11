@@ -1,5 +1,7 @@
 import "../../assets/footerHome.css";
 import { Fragment } from "react";
+import linkedin from "../../assets/linkedin.svg";
+
 const FooterHome = () => (
   <Fragment>
     <div
@@ -30,8 +32,9 @@ const FooterHome = () => (
         <a href="#">More</a>
       </div>
     </div>
-    <div>
-      ciao
+    <div className="m-2 text-center">
+      <img src={linkedin} alt="logo" height="14" width="56" />
+      <p id="text-logo">LinkedIn Corporation © {new Date().getFullYear()}</p>
     </div>
   </Fragment>
 );
