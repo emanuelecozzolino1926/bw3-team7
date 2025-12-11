@@ -1,3 +1,4 @@
+import { useParams } from "react-router-dom";
 import { Container, Row } from "react-bootstrap";
 import InformationProfile from "./ProfilePage/InformationProfile";
 import Banner from "./ProfilePage/Banner";
@@ -15,15 +16,16 @@ import Interessi from "./ProfilePage/Interessi";
 import Footer1 from "./Footer1";
 
 const ProfilePage = function () {
+  const { userId } = useParams();
   return (
     <>
       <Container className="p-0 p-md-2">
         <Row className="mt-3">
           <div className="col col-12 col-xl-9 p-0">
-            <Banner />
-            <InformationProfile />
+            <Banner userId={userId} />
+            <InformationProfile userId={userId} />
             <Attivita />
-            <Esperienza />
+            <Esperienza userId={userId} />
             <Formazione />
             <LicenzeCertificazioni />
             <Volontariato />

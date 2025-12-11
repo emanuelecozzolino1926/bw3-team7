@@ -25,3 +25,6 @@ html,
     margin-top: 103px !important;
   }
 }
+.border-dashed {
+  border-style: dashed !important;
+}

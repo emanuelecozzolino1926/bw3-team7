@@ -1,16 +1,17 @@
 import { Col, Row, Spinner } from "react-bootstrap";
 import { useEffect, useState } from "react";
 
-const InformationProfile = () => {
+const InformationProfile = (props) => {
   const [profileData, setProfileData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  const apiUrl = "https://striveschool-api.herokuapp.com/api/profile/me";
+  const apiUrl = "https://striveschool-api.herokuapp.com/api/profile/";
   const apiKey =
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTM3ZmU0NWQzMjJmNTAwMTUxMDc2YzIiLCJpYXQiOjE3NjUyNzcyNTMsImV4cCI6MTc2NjQ4Njg1M30.6vFhBSWn_BZLNsof5SqbWvb4UQfXAP1wchtNpfCrZmI";
 
+  const userId = props.userId;
   const getAbout = () => {
-    fetch(apiUrl, {
+    fetch(`${apiUrl}${userId}`, {
       headers: {
         Authorization: `Bearer ${apiKey}`,
       },
@@ -37,7 +38,7 @@ const InformationProfile = () => {
 
   useEffect(() => {
     getAbout();
-  }, []);
+  }, [userId]);
 
   return (
     <Col
