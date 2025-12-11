@@ -15,6 +15,7 @@ html,
 #root {
   min-height: 100vh;
   background-color: #eae6df;
+  overflow-x: hidden;
 }
 #myNav {
   height: 55px;

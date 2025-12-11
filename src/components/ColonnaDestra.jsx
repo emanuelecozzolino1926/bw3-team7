@@ -40,7 +40,7 @@ const ColonnaDestra = ({ title, people }) => {
 
   return (
     <div className="bg-light rounded-3 border-secondary border border-opacity-25 mb-2">
-      <h4 className="px-4 pt-4 mb-3">{title}</h4>
+      <h6 className="px-4 pt-4 mb-3">{title}</h6>
       {users?.slice(0, people).map((user, i) => (
         <div key={i}>
           <div className="d-flex align-items-start px-3 gap-2">
@@ -72,7 +72,7 @@ const ColonnaDestra = ({ title, people }) => {
 
       <div className="text-center py-3" id="illumina">
         <a>
-          Show all <i className="bi bi-arrow-right fw-bolder"></i>
+          Mostra tutto <i className="bi bi-arrow-right fw-bolder"></i>
         </a>
       </div>
     </div>
