@@ -2,6 +2,13 @@ import "../../assets/footerHome.css";
 import { Fragment } from "react";
 import linkedin from "../../assets/linkedin.svg";
 
+const footerLinks = [
+  ["About", "Accessibility", "Help Center"],
+  ["Privacy & Terms", "Ad Choices"],
+  ["Advertising", "Business Services"],
+  ["Get the LinkedIn app", "More"],
+];
+
 const FooterHome = () => (
   <Fragment>
     <div
@@ -12,25 +19,16 @@ const FooterHome = () => (
         Try LinkedIn on the Windows App
       </p>
     </div>
-    <div className="d-flex flex-column" id="a-container">
-      <div className="d-flex justify-content-center gap-3">
-        {" "}
-        <a href="#">About</a>
-        <a href="#">Accessibility</a>
-        <a href="#">Help Center</a>
-      </div>
-      <div className="d-flex justify-content-center gap-3 my-2">
-        <a href="#">Privacy & Terms</a>
-        <a href="#">Ad Choices</a>
-      </div>
-      <div className="d-flex justify-content-center gap-3 my-2">
-        <a href="#">Advertising</a>
-        <a href="#">Business Services</a>
-      </div>
-      <div className="d-flex justify-content-center gap-3">
-        <a href="#">Get the LinkedIn app</a>
-        <a href="#">More</a>
-      </div>
+    <div id="a-container" className="d-flex flex-column">
+      {footerLinks.map((row, i) => (
+        <div key={i} className="d-flex justify-content-center gap-3 my-2">
+          {row.map((link, j) => (
+            <a key={j} href="#">
+              {link}
+            </a>
+          ))}
+        </div>
+      ))}
     </div>
     <div className="m-2 text-center">
       <img src={linkedin} alt="logo" height="14" width="56" />
