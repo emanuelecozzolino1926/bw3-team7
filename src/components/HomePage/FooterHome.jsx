@@ -30,6 +30,9 @@ const FooterHome = () => (
         <a href="#">More</a>
       </div>
     </div>
+    <div>
+      ciao
+    </div>
   </Fragment>
 );
 
