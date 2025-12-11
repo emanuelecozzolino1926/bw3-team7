@@ -7,6 +7,7 @@ import CreatePost from "./HomePage/HomeCards/CreatePost";
 import ColonnaDestra from "./ColonnaDestra";
 import FooterHome from "./HomePage/FooterHome";
 import Consigliati from "./HomePage/Consigliati";
+import Post1 from "./HomePage/HomeCards/Post1";
 
 const Home = function () {
   return (
@@ -18,6 +19,7 @@ const Home = function () {
           </Col>
           <Col className="col-lg-5 col-md-7">
             <CreatePost />
+            <Post1 />
             <Consigliati people={3} title="Consigli per te" />
           </Col>
           <Col className="d-none d-lg-block col-lg-3 ">
