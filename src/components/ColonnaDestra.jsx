@@ -57,23 +57,27 @@ const ColonnaDestra = ({ title, people }) => {
             </div>
           </div>
           <div className="text-center mb-3 pe-5">
-            <button
-              onClick={() => {
-                setConnectedId(user._id);
-              }}
-              className="bg-transparent rounded-5 px-3 py-1 fw-bold">
-              <i className="bi bi-person-plus-fill"></i>
-              {connectedId === user._id ? "Connected" : "Connect"}
-            </button>
+            {people > 1 && (
+              <button
+                onClick={() => {
+                  setConnectedId(user._id);
+                }}
+                className="bg-transparent rounded-5 px-3 py-1 fw-bold">
+                <i className="bi bi-person-plus-fill"></i>
+                {connectedId === user._id ? "Connected" : "Connect"}
+              </button>
+            )}
           </div>
           {i !== people - 1 && <hr className="ms-4" />}
         </div>
       ))}
 
       <div className="text-center py-3" id="illumina">
-        <a>
-          Mostra tutto <i className="bi bi-arrow-right fw-bolder"></i>
-        </a>
+        {people > 3 && (
+          <a>
+            Mostra tutto <i className="bi bi-arrow-right fw-bolder"></i>
+          </a>
+        )}
       </div>
     </div>
   );
