@@ -97,16 +97,16 @@ const Banner = () => {
           <button
             className="px-3 rounded-5 border-0 py-2 text-light fw-bold"
             id="connect">
-            <i className="bi bi-person-plus-fill"></i> Connect
+            <i className="bi bi-telegram me-1"></i>Messaggio
           </button>
           <button className="px-3 rounded-5 py-2 fw-bold" id="message">
-            <i className="bi bi-telegram"></i> Message
+            <i className="bi bi-person-plus-fill"></i>  Segui
           </button>
           <button className="px-3 rounded-5 py-2 border border-dark fw-bold d-md-none">
             ...
           </button>
           <button className="px-3 rounded-5 py-2 border border-dark fw-bold d-none d-md-block">
-            More
+            Altro
           </button>
         </div>
       </div>
