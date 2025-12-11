@@ -13,8 +13,8 @@ const Home = function () {
   return (
     <>
       <Container>
-        <Row className="ms-2 primaHome mt-xs-5  mt-sm-5  mt-md-5  mt-lg-5  mt-xl-5">
-          <Col className="col-md-4 col-lg-3 ms-2 ">
+        <Row className="ms-2 primaHome ">
+          <Col className="col-md-4 col-lg-3 ms-lg-2 ">
             <LeftCards />
           </Col>
           <Col className="col-lg-5 col-md-7">

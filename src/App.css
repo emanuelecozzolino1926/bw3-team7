@@ -17,15 +17,28 @@ html,
   background-color: #eae6df;
   overflow-x: hidden;
   padding-bottom: 5%;
+  margin-top: 30px;
 }
 #myNav {
   height: 55px;
 }
-@media (max-width: 992px) {
-  .primaHome {
-    margin-top: 103px !important;
+@media (max-width: 991px) {
+  #myNav {
+    position: fixed;
+    bottom: 0;
   }
 }
+@media (min-width: 992px) {
+  #myNav {
+    position: fixed;
+    top: 0;
+  }
+  #minifoot {
+  }
+  #dpro {
+  }
+}
+
 .border-dashed {
   border-style: dashed !important;
 }
