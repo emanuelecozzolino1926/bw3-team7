@@ -22,6 +22,6 @@ html,
 }
 @media (max-width: 992px) {
   .primaHome {
-    margin: top 103px;
+    margin-top: 103px !important;
   }
 }
