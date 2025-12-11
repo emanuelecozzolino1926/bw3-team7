@@ -4,6 +4,7 @@ import Col from "react-bootstrap/Col";
 import { Container } from "react-bootstrap";
 import LeftCards from "./HomePage/HomeCards/LeftCard";
 import ColonnaDestra from "./ColonnaDestra";
+import Footer1 from "./Footer1";
 
 const Home = function () {
   return (
