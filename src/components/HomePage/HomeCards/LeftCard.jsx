@@ -4,6 +4,7 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
+import Accordion from 'react-bootstrap/Accordion';
 
 const LeftCards = function (){
      const [profileData, setProfileData] = useState(null);
@@ -248,8 +249,14 @@ const LeftCards = function (){
           </div>
         </div>
         </div></div>
+         <Accordion className='d-md-none mt-2 border border-secondary rounded-3' >
+      <Accordion.Item eventKey="0">
+        <Accordion.Header>Vedi altro</Accordion.Header>
+        <Accordion.Body>
        <div className="card border border-secondary ms-md-4 rounded-3 d-flex flex-column mt-3 "><div className='ms-3'><p className="mb-0 mt-3">500+ connections</p><p className='mt-0'>Espandi la tua rete</p></div></div>
-       <div className="card border border-secondary ms-md-4 rounded-3 d-flex flex-column mt-3 "><div className='ms-3 mt-3'><div className='d-flex flex-row'><i class="bi bi-bookmark-fill"></i><p className='fw-bold ms-3'>Elementi salvati</p></div><div className='d-flex flex-row'><i class="bi bi-people-fill"></i><p className='fw-bold ms-3'>Gruppi</p></div><div className='d-flex flex-row'><i class="bi bi-newspaper"></i><p className='fw-bold ms-3'>Newsletter</p></div><div className='d-flex flex-row'><i class="bi bi-calendar"></i><p className='fw-bold ms-3'>Eventi</p></div></div></div> </>
+       <div className="card border border-secondary ms-md-4 rounded-3 d-flex flex-column mt-3 "><div className='ms-3 mt-3'><div className='d-flex flex-row'><i class="bi bi-bookmark-fill"></i><p className='fw-bold ms-3'>Elementi salvati</p></div><div className='d-flex flex-row'><i class="bi bi-people-fill"></i><p className='fw-bold ms-3'>Gruppi</p></div><div className='d-flex flex-row'><i class="bi bi-newspaper"></i><p className='fw-bold ms-3'>Newsletter</p></div><div className='d-flex flex-row'><i class="bi bi-calendar"></i><p className='fw-bold ms-3'>Eventi</p></div></div></div></Accordion.Body></Accordion.Item></Accordion>
+       <div className="d-none d-md-block card border border-secondary ms-md-4 rounded-3 d-flex flex-column mt-3 "><div className='ms-3'><p className="mb-0 mt-3">500+ connections</p><p className='mt-0'>Espandi la tua rete</p></div></div>
+       <div className="card d-none d-md-block  border border-secondary ms-md-4 rounded-3 d-flex flex-column mt-3 "><div className='ms-3 mt-3'><div className='d-flex flex-row'><i class="bi bi-bookmark-fill"></i><p className='fw-bold ms-3'>Elementi salvati</p></div><div className='d-flex flex-row'><i class="bi bi-people-fill"></i><p className='fw-bold ms-3'>Gruppi</p></div><div className='d-flex flex-row'><i class="bi bi-newspaper"></i><p className='fw-bold ms-3'>Newsletter</p></div><div className='d-flex flex-row'><i class="bi bi-calendar"></i><p className='fw-bold ms-3'>Eventi</p></div></div></div> </>
     )
 };
 export default LeftCards

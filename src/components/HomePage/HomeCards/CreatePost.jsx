@@ -41,7 +41,7 @@ function CreatePost() {
     getBanner();
   }, []);
   return (
-    <Card>
+    <Card className='mt-4 mt-md-0 ms-2 w-100 border border-secondary rounded-3'>
       <Card.Body className='d-flex align-items-center px-3 py-0'>
         <div className='d-inline-block h-100 text-start'>
           <img style={{ width: '55px', height: '55px' }}
