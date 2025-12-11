@@ -249,7 +249,7 @@ const LeftCards = function (){
           </div>
         </div>
         </div></div>
-         <Accordion className='d-md-none mt-2 border border-secondary rounded-3' >
+         <Accordion className='d-md-none mt-2 mb-2 border border-secondary rounded-3' >
       <Accordion.Item eventKey="0">
         <Accordion.Header>Vedi altro</Accordion.Header>
         <Accordion.Body>

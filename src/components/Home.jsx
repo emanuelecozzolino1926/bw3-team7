@@ -13,7 +13,7 @@ const Home = function () {
     <>
       <Container>
         <Row className="ms-2 primaHome ">
-          <Col className="col-md-4 col-lg-3 ms-2 ">
+          <Col className="col-md-4 col-lg-3 ms-lg-2 ">
             <LeftCards />
           </Col>
           <Col className="col-lg-5 col-md-7">
