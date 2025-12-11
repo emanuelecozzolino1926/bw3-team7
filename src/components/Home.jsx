@@ -16,7 +16,7 @@ const Home = function () {
                     <Col className="col-md-4 col-lg-3 ms-2 ">
                         <LeftCards />
                     </Col>
-                    <Col className="col-lg-5 col-md-8">
+                    <Col className="col-lg-5 col-md-7">
                         <CreatePost />
                         <Consigliati people={3} title="Consigli per te" />
                     </Col>

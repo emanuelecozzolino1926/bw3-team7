@@ -48,7 +48,7 @@ const ColonnaDestra = ({ title, people }) => {
   useEffect(getUsers, []);
 
   return (
-    <div className="bg-light rounded-3 border-secondary border border-opacity-25 mb-2">
+    <div className="bg-light rounded-3 border-secondary border  mb-2 bg-white border border-secondary rounded-3">
       <h6 className="px-4 pt-4 mb-3">{title}</h6>
       {users?.slice(0, people).map((user, i) => (
         <div key={i}>
