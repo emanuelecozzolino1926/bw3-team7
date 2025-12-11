@@ -16,6 +16,13 @@ const ColonnaDestra = ({ title, people }) => {
     }
     return arr;
   };
+  const toggleConnection = (id) => {
+    setUsers((prev) =>
+      prev.map((user) =>
+        user._id === id ? { ...user, connected: !user.connected } : user
+      )
+    );
+  };
 
   const getUsers = () => {
     fetch(URL, {
@@ -28,7 +35,10 @@ const ColonnaDestra = ({ title, people }) => {
         return r.json();
       })
       .then((d) => {
-        const shuffled = shuffleArray(d.slice(-50));
+        const shuffled = shuffleArray(d.slice(-50)).map((u) => ({
+          ...u,
+          connected: false,
+        }));
         setUsers(shuffled);
       })
       .catch((e) => {
@@ -60,15 +70,15 @@ const ColonnaDestra = ({ title, people }) => {
             {people !== 1 && (
               <button
                 onClick={() => {
-                  setConnectedId(user._id);
+                  toggleConnection(user._id);
                 }}
                 className="bg-transparent rounded-5 px-3 py-1 fw-bold">
                 <i className="bi bi-person-plus-fill"></i>
                 {title === "Add your feed"
-                  ? connectedId === user._id
+                  ? user.connected
                     ? "Following"
                     : "Follow"
-                  : connectedId === user._id
+                  : user.connected
                   ? "Connected"
                   : "Connect"}
               </button>
