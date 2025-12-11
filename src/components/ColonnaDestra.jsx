@@ -64,7 +64,13 @@ const ColonnaDestra = ({ title, people }) => {
                 }}
                 className="bg-transparent rounded-5 px-3 py-1 fw-bold">
                 <i className="bi bi-person-plus-fill"></i>
-                {connectedId === user._id ? "Connected" : "Connect"}
+                {title === "Add your feed"
+                  ? connectedId === user._id
+                    ? "Following"
+                    : "Follow"
+                  : connectedId === user._id
+                  ? "Connected"
+                  : "Connect"}
               </button>
             )}
           </div>
@@ -72,18 +78,14 @@ const ColonnaDestra = ({ title, people }) => {
         </div>
       ))}
 
-      <div className="text-center py-3" id="illumina">
-        {people > 3 ? (
+      {people > 3 && (
+        <div className="text-center py-3" id="illumina">
           <a>
-            Mostra tutto <i className="bi bi-arrow-right fw-bolder"></i>
-          </a>
-        ) : (
-          <a>
-            View all reccomandations{" "}
+            {people === 1 ? "View all recommandations" : "Mostra tutto"}
             <i className="bi bi-arrow-right fw-bolder"></i>
           </a>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 };
