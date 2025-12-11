@@ -1,6 +1,6 @@
 import { Container, Row } from "react-bootstrap";
 import InformationProfile from "./ProfilePage/InformationProfile";
-import Banner from "./ProfilePage/Banner"
+import Banner from "./ProfilePage/Banner";
 import Attivita from "./ProfilePage/Attivita";
 import Esperienza from "./ProfilePage/Esperienza";
 import Formazione from "./ProfilePage/Formazione";
@@ -12,6 +12,7 @@ import Referenza from "./ProfilePage/Referenza";
 import Pubblicazioni from "./ProfilePage/Pubblicazioni";
 import Lingue from "./ProfilePage/Lingue";
 import Interessi from "./ProfilePage/Interessi";
+import Footer1 from "./Footer1";
 
 const ProfilePage = function () {
   return (
@@ -38,6 +39,7 @@ const ProfilePage = function () {
             <ColonnaDestra title="Esplora i profili Premium" people={5} />
             <ColonnaDestra title="Persone che potresti conoscere" people={3} />
           </div>
+          <Footer1 />
         </Row>
       </Container>
     </>
