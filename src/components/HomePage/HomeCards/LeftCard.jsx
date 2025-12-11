@@ -112,7 +112,7 @@ const LeftCards = function (){
                {profileData?.area}
             </p>
             <Button
-              className="me-2 mt-3 text-dark fs-6 border border-2 border-secondary d-flex flex-row align-items-center border-dashed" style={{backgroundColor:'#e0dcdc'}}
+              className="me-2 mt-3 me-2 mb-2 text-dark fs-6 border border-2 border-secondary d-flex flex-row align-items-center border-dashed w-100" style={{backgroundColor:'#e0dcdc'}}
               onClick={() => setShowAdd(true)}
             >
               <i className="bi bi-plus me-3"></i>Esperienza
