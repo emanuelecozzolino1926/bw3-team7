@@ -115,7 +115,7 @@ const LeftCards = function (){
               className="me-2 mt-3 text-dark fs-6 border border-2 border-secondary d-flex flex-row align-items-center border-dashed" style={{backgroundColor:'#e0dcdc'}}
               onClick={() => setShowAdd(true)}
             >
-              <i class="bi bi-plus me-3"></i>Esperienza
+              <i className="bi bi-plus me-3"></i>Esperienza
             </Button>
             <Modal show={showAdd} onHide={() => setShowAdd(false)}>
               <Modal.Header closeButton>
@@ -249,7 +249,7 @@ const LeftCards = function (){
         </div>
         </div></div>
        <div className="card border border-secondary ms-4 rounded-3 d-flex flex-column mt-3 "><div className='ms-3'><p className="mb-0 mt-3">500+ connections</p><p className='mt-0'>Espandi la tua rete</p></div></div>
-       <div className="card border border-secondary ms-4 rounded-3 d-flex flex-column mt-3 "><div className='ms-3 mt-3'><div className='d-flex flex-row'><i class="bi bi-bookmark-fill"></i><p className='fw-bold ms-3'>Elementi salvati</p></div><div className='d-flex flex-row'><i class="bi bi-people-fill"></i><p className='fw-bold ms-3'>Gruppi</p></div><div className='d-flex flex-row'><i class="bi bi-newspaper"></i><p className='fw-bold ms-3'>Newsletter</p></div><div className='d-flex flex-row'><i class="bi bi-calendar"></i><p className='fw-bold ms-3'>Eventi</p></div></div></div> </>
+       <div className="card border border-secondary ms-4 rounded-3 d-flex flex-column mt-3 "><div className='ms-3 mt-3'><div className='d-flex flex-row'><i className="bi bi-bookmark-fill"></i><p className='fw-bold ms-3'>Elementi salvati</p></div><div className='d-flex flex-row'><i className="bi bi-people-fill"></i><p className='fw-bold ms-3'>Gruppi</p></div><div className='d-flex flex-row'><i className="bi bi-newspaper"></i><p className='fw-bold ms-3'>Newsletter</p></div><div className='d-flex flex-row'><i className="bi bi-calendar"></i><p className='fw-bold ms-3'>Eventi</p></div></div></div> </>
     )
 };
 export default LeftCards
