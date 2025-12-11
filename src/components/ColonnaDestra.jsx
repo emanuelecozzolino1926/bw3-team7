@@ -67,11 +67,11 @@ const ColonnaDestra = ({ title, people }) => {
           </div>
           <div className="text-center mb-3 pe-5">
             {people !== 1 && (
-              <button
+              <button 
                 onClick={() => {
                   toggleConnection(user._id);
                 }}
-                className="bg-transparent rounded-5 px-3 py-1 fw-bold">
+                className="bg-transparent rounded-5 px-3 py-1 fw-bold mt-3">
                 <i className="bi bi-person-plus-fill"></i>
                 {title === "Add your feed"
                   ? user.connected
