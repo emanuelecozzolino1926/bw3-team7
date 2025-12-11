@@ -74,14 +74,14 @@ const ColonnaDestra = ({ title, people }) => {
                 className="bg-transparent rounded-5 px-3 py-1 fw-bold mt-3">
                 {title === "Aggiungi feed" ? (
                   user.connected ? (
-                    <i className="bi bi-check2">Seguito</i>
+                    <i className="bi bi-check2"> Seguito</i>
                   ) : (
-                    <i className="bi bi-person-plus-fill">Segui</i>
+                    <i className="bi bi-person-plus-fill"> Segui</i>
                   )
                 ) : user.connected ? (
-                  "Connected"
+                  <i class="bi bi-clock"> In sospeso</i>
                 ) : (
-                  <i className="bi bi-person-plus-fill">Collegati</i>
+                  <i className="bi bi-person-plus-fill"> Collegati</i>
                 )}
               </button>
             )}
