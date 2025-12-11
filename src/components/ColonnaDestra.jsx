@@ -81,7 +81,7 @@ const ColonnaDestra = ({ title, people }) => {
                 ) : user.connected ? (
                   "Connected"
                 ) : (
-                  "Connect"
+                  <i className="bi bi-person-plus-fill">Collegati</i>
                 )}
               </button>
             )}
