@@ -11,7 +11,7 @@ const footerLinks = [
 ];
 
 const FooterHome = () => (
-  <Fragment>
+  <Fragment id='minifoot' >
     <div
       className="bg-light rounded-3 border-secondary border border-opacity-25 mb-2 d-flex align-items-center p-2 gap-2"
       id="appiccicato">

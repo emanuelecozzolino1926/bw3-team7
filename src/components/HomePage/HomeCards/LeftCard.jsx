@@ -89,7 +89,7 @@ const LeftCards = function (){
   };
    
     return(
-<><div className="card  border border-secondary ms-md-4 rounded-3">
+<><div className="card  border border-secondary ms-md-4 rounded-3 ">
       <div className="img-container position-relative " style={{height:'100px'}}>
        <div style={{position:'absolute',top:'60px',left:'0px'}}>
         <img
