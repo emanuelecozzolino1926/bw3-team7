@@ -70,7 +70,6 @@ function Post1() {
         <div className="border-top p-2">
           <textarea
             className="form-control"
-            rows="2"
             placeholder="Scrivi un commento..."
             value={commentText}
             onChange={(e) => setCommentText(e.target.value)}></textarea>
