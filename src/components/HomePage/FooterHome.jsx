@@ -3,10 +3,11 @@ import { Fragment } from "react";
 import linkedin from "../../assets/linkedin.svg";
 
 const footerLinks = [
-  ["About", "Accessibility", "Help Center"],
-  ["Privacy & Terms", "Ad Choices"],
-  ["Advertising", "Business Services"],
-  ["Get the LinkedIn app", "More"],
+  ["Informazioni", "Accessibilita'"],
+  ["Centro assistenza", "Privacy e condizioni"],
+  ["Opzioni per gli annunci pubblicitari"],
+  ["Pubblicita'", "Servizi alle aziende"],
+  ["Scarica l'app LinkedIn", "Altro"],
 ];
 
 const FooterHome = () => (
@@ -16,7 +17,7 @@ const FooterHome = () => (
       id="appiccicato">
       <span className="bg-warning bg-opacity-50 rounded-2 p-1">TIP</span>
       <p className="m-0 text-muted fw-medium">
-        Try LinkedIn on the Windows App
+        Prova LinkedIn nell'app di windows!
       </p>
     </div>
     <div id="a-container" className="d-flex flex-column">

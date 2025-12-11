@@ -9,6 +9,7 @@
 
 .anchor {
   color: grey;
+  transition: 200ms ease-in-out;
   &:hover {
     color: #0038ee;
     text-decoration: underline;
