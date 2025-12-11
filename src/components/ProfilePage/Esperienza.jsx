@@ -386,13 +386,13 @@ const Esperienza = () => {
           </div>
         </Card.Title>
 
-      
-          {expData?.map((item) => (
-            <div key={item._id}>
-              <SingleEsperienzaCard exp={item} />
-              <hr />
-            </div>
-          ))}
+
+        {expData?.map((item) => (
+          <div key={item._id}>
+            <SingleEsperienzaCard exp={item} />
+            <hr />
+          </div>
+        ))}
       </Card.Body>
     </Card>
   );
