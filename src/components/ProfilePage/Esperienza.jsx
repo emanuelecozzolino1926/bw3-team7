@@ -1,6 +1,5 @@
 import SingleEsperienzaCard from "./Cards/SingleEsperienzaCard";
 import Card from "react-bootstrap/Card";
-import { Row, Col } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
@@ -9,7 +8,6 @@ import InputGroup from "react-bootstrap/InputGroup";
 
 const Esperienza = () => {
   const [expData, setExpData] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
 
   const [experience, setExperience] = useState({
     role: "",
@@ -18,12 +16,12 @@ const Esperienza = () => {
     endDate: "",
     description: "",
     area: "",
+    image: "",
   });
 
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const [showAdd, setShowAdd] = useState(false);
+  const [showEdit, setShowEdit] = useState(false);
+  const [selectedExpId, setSelectedExpId] = useState(null);
 
   const apiUrl = "https://striveschool-api.herokuapp.com/api/profile/";
   const apiKey =
@@ -49,7 +47,6 @@ const Esperienza = () => {
       })
       .then((data) => {
         console.log(data);
-        setIsLoading(false);
         setExpData(data);
       })
       .catch((error) => {
@@ -64,15 +61,7 @@ const Esperienza = () => {
         Authorization: `Bearer ${apiKey}`,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        role: experience.role,
-        company: experience.company,
-        startDate: experience.startDate,
-        endDate: experience.endDate || null,
-        description: experience.description,
-        area: experience.area,
-        image: experience.image,
-      }),
+      body: JSON.stringify(experience),
     })
       .then((response) => {
         if (response.ok) {
@@ -86,9 +75,7 @@ const Esperienza = () => {
       })
       .then((expData) => {
         getExp(expData);
-        handleClose();
-        console.log(expData);
-
+        setShowAdd(false);
         setExperience({
           role: "",
           company: "",
@@ -98,9 +85,67 @@ const Esperienza = () => {
           area: "",
           image: "",
         });
+        console.log(expData);
       })
       .catch((error) => {
         console.log(`Impossibile accedere al server ${error}`);
+      });
+  };
+
+  const deleteExp = () => {
+    fetch(`${apiUrl}${userId}/experiences/${selectedExpId}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+      },
+    })
+      .then((response) => {
+        if (response.ok) {
+          console.log("Delete eseguito");
+          setExpData((prev) => prev.filter((exp) => exp._id !== selectedExpId));
+          setShowEdit(false);
+        } else {
+          throw new Error("Non riesco ad eseguire il delete");
+        }
+      })
+      .catch((error) => {
+        console.log(`Server irragiungibile ${error}`);
+      });
+  };
+
+  const editExp = () => {
+    fetch(`${apiUrl}${userId}/experiences/${selectedExpId}`, {
+      method: "PUT",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(experience),
+    })
+      .then((response) => {
+        if (response.ok) {
+          console.log("Put eseguita");
+          return response.json();
+        } else {
+          throw new Error("Non riesco ad eseguire la put");
+        }
+      })
+      .then(() => {
+        getExp();
+        setShowEdit(false);
+        setExperience({
+          role: "",
+          company: "",
+          startDate: "",
+          endDate: "",
+          description: "",
+          area: "",
+          image: "",
+        });
+        setSelectedExpId(null);
+      })
+      .catch((error) => {
+        console.log(`Server irragiungibile ${error}`);
       });
   };
 
@@ -116,16 +161,15 @@ const Esperienza = () => {
           <div>
             <Button
               className="me-4 text-dark fs-4 border-0 bg-white"
-              onClick={handleShow}
+              onClick={() => setShowAdd(true)}
             >
               <i className="bi bi-plus-circle"></i>
             </Button>
 
-            <Modal show={show} onHide={handleClose}>
+            <Modal show={showAdd} onHide={() => setShowAdd(false)}>
               <Modal.Header closeButton>
                 <Modal.Title>Aggiungi un'esperienza</Modal.Title>
               </Modal.Header>
-
               <Modal.Body>
                 <InputGroup size="sm" className="mb-3">
                   <InputGroup.Text id="input-role">Role</InputGroup.Text>
@@ -242,7 +286,7 @@ const Esperienza = () => {
               </Modal.Body>
 
               <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
+                <Button variant="secondary" onClick={() => setShowAdd(false)}>
                   Chiudi
                 </Button>
                 <Button variant="primary" onClick={handleSaveExperience}>
@@ -251,9 +295,9 @@ const Esperienza = () => {
               </Modal.Footer>
             </Modal>
 
-            <Modal show={show} onHide={handleClose}>
+            <Modal show={showEdit} onHide={() => setShowEdit(false)}>
               <Modal.Header closeButton>
-                <Modal.Title>Modifica un' esperienza</Modal.Title>
+                <Modal.Title>Modifica un'esperienza</Modal.Title>
               </Modal.Header>
 
               <Modal.Body>
@@ -372,13 +416,28 @@ const Esperienza = () => {
               </Modal.Body>
 
               <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
+                <Button
+                  variant="secondary"
+                  onClick={() => {
+                    setShowEdit(false);
+                    setExperience({
+                      role: "",
+                      company: "",
+                      startDate: "",
+                      endDate: "",
+                      description: "",
+                      area: "",
+                      image: "",
+                    });
+                    setSelectedExpId(null);
+                  }}
+                >
                   Chiudi
                 </Button>
-                <Button variant="primary" onClick={handleSaveExperience}>
+                <Button variant="primary" onClick={editExp}>
                   Salva
                 </Button>
-                <Button variant="danger" onClick={handleClose}>
+                <Button variant="danger" onClick={deleteExp}>
                   Elimina
                 </Button>
               </Modal.Footer>
@@ -386,10 +445,24 @@ const Esperienza = () => {
           </div>
         </Card.Title>
 
-
         {expData?.map((item) => (
           <div key={item._id}>
-            <SingleEsperienzaCard exp={item} />
+            <SingleEsperienzaCard
+              exp={item}
+              onEdit={() => {
+                setSelectedExpId(item._id);
+                setExperience({
+                  role: item.role || "",
+                  company: item.company || "",
+                  startDate: item.startDate ? item.startDate.slice(0, 10) : "",
+                  endDate: item.endDate ? item.endDate.slice(0, 10) : "",
+                  description: item.description || "",
+                  area: item.area || "",
+                  image: item.image || "",
+                });
+                setShowEdit(true);
+              }}
+            />
             <hr />
           </div>
         ))}
