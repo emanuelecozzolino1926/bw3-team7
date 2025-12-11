@@ -4,9 +4,23 @@ import { useState } from "react";
 
 function Post1() {
   const [connected, setConnected] = useState(false);
+  const [showCommentBox, setShowCommentBox] = useState(false);
+  const [commentText, setCommentText] = useState("");
+  const [commenti, setCommenti] = useState([]);
+
   const toggleButton = () => {
     setConnected(!connected);
   };
+  const openCommenti = () => {
+    setShowCommentBox((prev) => !prev);
+  };
+
+  const postaCommento = () => {
+    if (commentText.trim() === "") return;
+    setCommenti((prev) => [...prev, commentText]);
+    setCommentText("");
+  };
+
   return (
     <Card className="mt-2 border-1 border border-secondary">
       <Card.Body>
@@ -25,8 +39,7 @@ function Post1() {
               Cantante | Artista internazionale
             </p>
             <p className="text-muted" style={{ fontSize: "0.8rem" }}>
-              {" "}
-              3g •{" "}
+              {new Date().getDay()} giorni fa
             </p>
           </Col>
           <Col xs="auto">
@@ -44,7 +57,31 @@ function Post1() {
           className="img-fluid rounded"
         />
       </Card.Body>
+      {commenti.length > 0 && (
+        <div className="border-top p-2">
+          {commenti.map((c, i) => (
+            <p key={i} className="m-0">
+              {c}
+            </p>
+          ))}
+        </div>
+      )}
+      {showCommentBox && (
+        <div className="border-top p-2">
+          <textarea
+            className="form-control"
+            rows="2"
+            placeholder="Scrivi un commento..."
+            value={commentText}
+            onChange={(e) => setCommentText(e.target.value)}></textarea>
 
+          <button
+            className="btn btn-primary btn-sm mt-2"
+            onClick={postaCommento}>
+            Posta
+          </button>
+        </div>
+      )}
       <Card.Footer className="bg-white">
         <Row xs={4} className="text-center mt-2">
           <Col>
@@ -52,8 +89,12 @@ function Post1() {
             <div style={{ fontSize: "0.9rem" }}>Consiglia</div>
           </Col>
           <Col>
-            <i className="bi bi-chat-left-dots"></i>
-            <div style={{ fontSize: "0.9rem" }}>Commenta</div>
+            <div
+              className="d-flex flex-column"
+              style={{ fontSize: "0.9rem", cursor: "pointer" }}>
+              <i className="bi bi-chat-left-dots"></i>
+              <span onClick={openCommenti}>Commenta</span>
+            </div>
           </Col>
           <Col>
             <i className="bi bi-shuffle"></i>
