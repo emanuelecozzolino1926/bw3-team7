@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 
 const ColonnaDestra = ({ title, people }) => {
   const [users, setUsers] = useState(null);
-  const [connectedId, setConnectedId] = useState(null);
 
   const URL = "https://striveschool-api.herokuapp.com/api/profile";
   const KEY =
