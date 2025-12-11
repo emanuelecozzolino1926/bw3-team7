@@ -15,3 +15,7 @@
     background-color: #f4f2ee;
   }
 }
+
+.animation-button {
+  transition: 5s ease-in-out;
+}

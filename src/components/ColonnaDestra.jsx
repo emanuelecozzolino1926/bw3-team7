@@ -71,7 +71,7 @@ const ColonnaDestra = ({ title, people }) => {
                 onClick={() => {
                   toggleConnection(user._id);
                 }}
-                className="bg-transparent rounded-5 px-3 py-1 fw-bold">
+                className="bg-transparent rounded-5 px-3 py-1 fw-bold ">
                 <i className="bi bi-person-plus-fill"></i>
                 {title === "Add your feed"
                   ? user.connected
