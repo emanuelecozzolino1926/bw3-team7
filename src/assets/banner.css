@@ -17,14 +17,18 @@ a {
 
 #pic {
   position: absolute;
-  bottom: -60px;
+  bottom: -40px;
   left: 30px;
   border-radius: 50%;
   border: 5px solid white;
   height: 160px;
   width: 160px;
 }
-
+@media screen and (max-width: 768px) {
+  #pic{
+      bottom: -55px;
+  }
+}
 #connect {
   background-color: #0a66c2;
   transition: 200ms ease-in-out;
