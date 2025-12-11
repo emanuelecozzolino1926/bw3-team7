@@ -11,11 +11,9 @@ const Compentenza = () => {
                     <h3 className="m-0">Competenze</h3>
                 </Card.Title>
                 <SingleCompentenzeCard />
-                <hr />
-                <SingleCompentenzeCard />
             </Card.Body>
             <Card.Footer className="text-muted">
-                <Button variant="light" className="w-100 text-black bg-light border-0 rounded-0">Mostra tutte le compentenze <i className="bi bi-arrow-right-short"></i></Button>
+                <Button variant="light" className="w-100 text-black bg-light border-0 rounded-0">Mostra tutte le compentenze (17)<i className="bi bi-arrow-right-short"></i></Button>
             </Card.Footer>
         </Card>
     )
