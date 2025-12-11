@@ -57,7 +57,7 @@ const ColonnaDestra = ({ title, people }) => {
             </div>
           </div>
           <div className="text-center mb-3 pe-5">
-            {people > 1 && (
+            {people !== 1 && (
               <button
                 onClick={() => {
                   setConnectedId(user._id);
