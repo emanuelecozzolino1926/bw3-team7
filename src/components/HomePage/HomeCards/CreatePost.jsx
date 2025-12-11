@@ -41,8 +41,8 @@ function CreatePost() {
             getBanner();
           }, []);
   return (
-    <Card>
-      <Card.Body className='d-flex align-items-center p-3'>
+    <Card className='border border-secondary ms-md-3 rounded-3 mt-1'>
+      <Card.Body className='d-flex align-items-center p-3 '>
         <div className='d-inline-block h-100 text-start'>
         <img style={{width:'55px',height:'55px'}}
             src={profileData?.image}
