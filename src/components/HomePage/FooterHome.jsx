@@ -1,5 +1,4 @@
 import "../../assets/footerHome.css";
-import { Fragment } from "react";
 import linkedin from "../../assets/linkedin.svg";
 
 const footerLinks = [
@@ -11,7 +10,7 @@ const footerLinks = [
 ];
 
 const FooterHome = () => (
-  <Fragment id='minifoot' >
+  <>
     <div
       className="bg-light rounded-3 border-secondary border border-opacity-25 mb-2 d-flex align-items-center p-2 gap-2"
       id="appiccicato">
@@ -35,7 +34,7 @@ const FooterHome = () => (
       <img src={linkedin} alt="logo" height="14" width="56" />
       <p id="text-logo">LinkedIn Corporation © {new Date().getFullYear()}</p>
     </div>
-  </Fragment>
+  </>
 );
 
 export default FooterHome;
