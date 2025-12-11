@@ -33,6 +33,10 @@ html,
     position: fixed;
     top: 0;
   }
+  #minifoot {
+  }
+  #dpro {
+  }
 }
 
 .border-dashed {

@@ -89,7 +89,7 @@ const LeftCards = function (){
   };
    
     return(
-<><div className="card  border border-secondary ms-md-4 rounded-3 ">
+<><div id='dpro'><div  className="card  border border-secondary ms-md-4 rounded-3 ">
       <div className="img-container position-relative " style={{height:'100px'}}>
        <div style={{position:'absolute',top:'60px',left:'0px'}}>
         <img
@@ -256,7 +256,7 @@ const LeftCards = function (){
        <div className="card border border-secondary ms-md-4 rounded-3 d-flex flex-column mt-3 "><div className='ms-3'><p className="mb-0 mt-3">500+ connections</p><p className='mt-0'>Espandi la tua rete</p></div></div>
        <div className="card border border-secondary ms-md-4 rounded-3 d-flex flex-column mt-3 "><div className='ms-3 mt-3'><div className='d-flex flex-row'><i class="bi bi-bookmark-fill"></i><p className='fw-bold ms-3'>Elementi salvati</p></div><div className='d-flex flex-row'><i class="bi bi-people-fill"></i><p className='fw-bold ms-3'>Gruppi</p></div><div className='d-flex flex-row'><i class="bi bi-newspaper"></i><p className='fw-bold ms-3'>Newsletter</p></div><div className='d-flex flex-row'><i class="bi bi-calendar"></i><p className='fw-bold ms-3'>Eventi</p></div></div></div></Accordion.Body></Accordion.Item></Accordion>
        <div className="d-none d-md-block card border border-secondary ms-md-4 rounded-3 d-flex flex-column mt-3 "><div className='ms-3'><p className="mb-0 mt-3">500+ connections</p><p className='mt-0'>Espandi la tua rete</p></div></div>
-       <div className="card d-none d-md-block  border border-secondary ms-md-4 rounded-3 d-flex flex-column mt-3 "><div className='ms-3 mt-3'><div className='d-flex flex-row'><i class="bi bi-bookmark-fill"></i><p className='fw-bold ms-3'>Elementi salvati</p></div><div className='d-flex flex-row'><i class="bi bi-people-fill"></i><p className='fw-bold ms-3'>Gruppi</p></div><div className='d-flex flex-row'><i class="bi bi-newspaper"></i><p className='fw-bold ms-3'>Newsletter</p></div><div className='d-flex flex-row'><i class="bi bi-calendar"></i><p className='fw-bold ms-3'>Eventi</p></div></div></div> </>
+       <div className="card d-none d-md-block  border border-secondary ms-md-4 rounded-3 d-flex flex-column mt-3 "><div className='ms-3 mt-3'><div className='d-flex flex-row'><i class="bi bi-bookmark-fill"></i><p className='fw-bold ms-3'>Elementi salvati</p></div><div className='d-flex flex-row'><i class="bi bi-people-fill"></i><p className='fw-bold ms-3'>Gruppi</p></div><div className='d-flex flex-row'><i class="bi bi-newspaper"></i><p className='fw-bold ms-3'>Newsletter</p></div><div className='d-flex flex-row'><i class="bi bi-calendar"></i><p className='fw-bold ms-3'>Eventi</p></div></div></div></div> </>
     )
 };
 export default LeftCards
