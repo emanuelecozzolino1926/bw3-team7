@@ -40,11 +40,13 @@ function Post1() {
             </p>
           </Col>
           <Col xs="auto">
+
             <button
               className="btn btn-outline-primary btn-sm fw-semibold rounded-4"
               onClick={toggleButton}>
               {connected ? <i className="bi bi-check2"> Seguito</i> : "+ Segui"}
             </button>
+            {/* Funziona a intermittenza, da aggiustare!!! */}
           </Col>
         </Row>
         <p className="mt-2">Il Tour è stato fantastico, #VivaPupone</p>
