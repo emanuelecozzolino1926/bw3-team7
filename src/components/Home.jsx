@@ -2,8 +2,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Container } from 'react-bootstrap';
-import LeftCards from './HomeCards/LeftCard';
-import CreatePost from './HomeCards/CreatePost';
+import LeftCards from './HomePage/HomeCards/LeftCard';
+import CreatePost from './HomePage/HomeCards/CreatePost';
 
 
 const Home = function(){
