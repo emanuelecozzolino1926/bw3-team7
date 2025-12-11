@@ -4,8 +4,7 @@ import Col from "react-bootstrap/Col";
 import { Container } from "react-bootstrap";
 import LeftCards from "./HomePage/HomeCards/LeftCard";
 import ColonnaDestra from "./ColonnaDestra";
-import Footer1 from "./Footer1";
-
+import FooterHome from "./HomePage/FooterHome";
 const Home = function () {
   return (
     <>
@@ -18,6 +17,7 @@ const Home = function () {
           <Col className="d-none d-lg-block col-lg-3 ">
             <ColonnaDestra title="Today's puzzle" people={1} />
             <ColonnaDestra title="Add your feed" people={3} />
+            <FooterHome />
           </Col>
         </Row>
       </Container>
