@@ -7,20 +7,17 @@ function Post1() {
   const [showCommentBox, setShowCommentBox] = useState(false);
   const [commentText, setCommentText] = useState("");
   const [commenti, setCommenti] = useState([]);
-
   const toggleButton = () => {
     setConnected(!connected);
   };
   const openCommenti = () => {
     setShowCommentBox((prev) => !prev);
   };
-
   const postaCommento = () => {
     if (commentText.trim() === "") return;
     setCommenti((prev) => [...prev, commentText]);
     setCommentText("");
   };
-
   return (
     <Card className="mt-2 border-1 border border-secondary">
       <Card.Body>
@@ -73,7 +70,6 @@ function Post1() {
             placeholder="Scrivi un commento..."
             value={commentText}
             onChange={(e) => setCommentText(e.target.value)}></textarea>
-
           <button
             className="btn btn-primary btn-sm mt-2"
             onClick={postaCommento}>
