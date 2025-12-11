@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 
 const ColonnaDestra = ({ title, people }) => {
   const [users, setUsers] = useState(null);
-  const [connectedId, setConnectedId] = useState(null);
 
   const URL = "https://striveschool-api.herokuapp.com/api/profile";
   const KEY =
@@ -15,6 +14,13 @@ const ColonnaDestra = ({ title, people }) => {
       [arr[i], arr[j]] = [arr[j], arr[i]];
     }
     return arr;
+  };
+  const toggleConnection = (id) => {
+    setUsers((prev) =>
+      prev.map((user) =>
+        user._id === id ? { ...user, connected: !user.connected } : user
+      )
+    );
   };
 
   const getUsers = () => {
@@ -28,7 +34,10 @@ const ColonnaDestra = ({ title, people }) => {
         return r.json();
       })
       .then((d) => {
-        const shuffled = shuffleArray(d.slice(-50));
+        const shuffled = shuffleArray(d.slice(-50)).map((u) => ({
+          ...u,
+          connected: false,
+        }));
         setUsers(shuffled);
       })
       .catch((e) => {
@@ -57,24 +66,35 @@ const ColonnaDestra = ({ title, people }) => {
             </div>
           </div>
           <div className="text-center mb-3 pe-5">
-            <button
-              onClick={() => {
-                setConnectedId(user._id);
-              }}
-              className="bg-transparent rounded-5 px-3 py-1 fw-bold">
-              <i className="bi bi-person-plus-fill"></i>
-              {connectedId === user._id ? "Connected" : "Connect"}
-            </button>
+            {people !== 1 && (
+              <button
+                onClick={() => {
+                  toggleConnection(user._id);
+                }}
+                className="bg-transparent rounded-5 px-3 py-1 fw-bold">
+                <i className="bi bi-person-plus-fill"></i>
+                {title === "Add your feed"
+                  ? user.connected
+                    ? "Following"
+                    : "Follow"
+                  : user.connected
+                  ? "Connected"
+                  : "Connect"}
+              </button>
+            )}
           </div>
           {i !== people - 1 && <hr className="ms-4" />}
         </div>
       ))}
 
-      <div className="text-center py-3" id="illumina">
-        <a>
-          Mostra tutto <i className="bi bi-arrow-right fw-bolder"></i>
-        </a>
-      </div>
+      {people > 3 && (
+        <div className="text-center py-3" id="illumina">
+          <a>
+            {people === 1 ? "View all recommandations" : "Mostra tutto"}
+            <i className="bi bi-arrow-right fw-bolder"></i>
+          </a>
+        </div>
+      )}
     </div>
   );
 };

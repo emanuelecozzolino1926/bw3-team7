@@ -1,0 +1,16 @@
+#a-container {
+  font-size: 12px;
+}
+
+#text-logo {
+  font-size: 13px;
+  display: inline;
+}
+
+.anchor {
+  color: grey;
+  &:hover {
+    color: #0038ee;
+    text-decoration: underline;
+  }
+}

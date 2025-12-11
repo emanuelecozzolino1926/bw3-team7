@@ -13,6 +13,7 @@ import Referenza from "./ProfilePage/Referenza";
 import Pubblicazioni from "./ProfilePage/Pubblicazioni";
 import Lingue from "./ProfilePage/Lingue";
 import Interessi from "./ProfilePage/Interessi";
+import Footer1 from "./Footer1";
 
 const ProfilePage = function () {
   const { userId } = useParams();
@@ -37,9 +38,10 @@ const ProfilePage = function () {
           <div className="col d-none d-xl-block col-xl-3">
             <hr className="m-0 mb-2" />
             <ColonnaDestra title="Altri profili per te" people={5} />
-            <ColonnaDestra title="Esplora i profili Premium" people={4} />
-            <ColonnaDestra title="Persone che potresti conoscere" people={5} />
+            <ColonnaDestra title="Esplora i profili Premium" people={5} />
+            <ColonnaDestra title="Persone che potresti conoscere" people={3} />
           </div>
+          <Footer1 />
         </Row>
       </Container>
     </>
