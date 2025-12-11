@@ -3,19 +3,21 @@ import { useEffect, useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 
-const Banner = () => {
+const Banner = (props) => {
   const [profileData, setProfileData] = useState(null);
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const apiUrl = "https://striveschool-api.herokuapp.com/api/profile/me";
+  const apiUrl = "https://striveschool-api.herokuapp.com/api/profile/";
   const apiKey =
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTM3ZmU0NWQzMjJmNTAwMTUxMDc2YzIiLCJpYXQiOjE3NjUyNzcyNTMsImV4cCI6MTc2NjQ4Njg1M30.6vFhBSWn_BZLNsof5SqbWvb4UQfXAP1wchtNpfCrZmI";
 
+  const userId = props.userId;
+
   const getBanner = () => {
-    fetch(apiUrl, {
+    fetch(`${apiUrl}${userId}`, {
       headers: {
         Authorization: `Bearer ${apiKey}`,
       },
@@ -40,7 +42,7 @@ const Banner = () => {
 
   useEffect(() => {
     getBanner();
-  }, []);
+  }, [userId]);
 
   return (
     <div className="card">
@@ -71,7 +73,8 @@ const Banner = () => {
               <Button
                 className="border-0 bg-white"
                 style={{ color: "#0A66C2", fontWeight: "bold" }}
-                onClick={handleShow}>
+                onClick={handleShow}
+              >
                 Contact info
               </Button>
 
@@ -96,11 +99,12 @@ const Banner = () => {
         <div className="d-flex gap-2 align-items-center my-3">
           <button
             className="px-3 rounded-5 border-0 py-2 text-light fw-bold"
-            id="connect">
+            id="connect"
+          >
             <i className="bi bi-telegram me-1"></i>Messaggio
           </button>
           <button className="px-3 rounded-5 py-2 fw-bold" id="message">
-            <i className="bi bi-person-plus-fill"></i>  Segui
+            <i className="bi bi-person-plus-fill"></i> Segui
           </button>
           <button className="px-3 rounded-5 py-2 border border-dark fw-bold d-md-none">
             ...
