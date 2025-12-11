@@ -30,7 +30,6 @@ const ColonnaDestra = ({ title, people }) => {
       .then((d) => {
         const shuffled = shuffleArray(d.slice(-50));
         setUsers(shuffled);
-        console.log(shuffled);
       })
       .catch((e) => {
         console.log(`Siamo nel catch: ${e}`);

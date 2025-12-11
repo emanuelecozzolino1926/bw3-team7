@@ -44,18 +44,15 @@ const Banner = () => {
 
   return (
     <div className="card">
-      <div className="img-container position-relative">
-        <img
-          src="https://placebear.com/300/100"
-          alt="banner-img"
-          className="w-100"
-        />
-        <img
-          src={profileData?.image}
-          alt="profile-img"
-          id="pic"
-          style={{ width: "200px", height: "200px" }}
-        />
+      <div className="img-container">
+        <div className="position-relative">
+          <img
+            src="https://placebear.com/300/100"
+            alt="banner-img"
+            className="w-100"
+          />
+          <img src={profileData?.image} alt="profile-img" id="pic" />
+        </div>
       </div>
       <div className="card-body">
         <div className="d-flex align-items-center gap-5">
