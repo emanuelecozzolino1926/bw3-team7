@@ -1,17 +1,17 @@
 import { Container, Row } from "react-bootstrap";
-import InformationProfile from "./InformationProfile";
-import Banner from "./Banner";
-import Attivita from "./Attivita";
-import Esperienza from "./Esperienza";
-import Formazione from "./Formazione";
-import LicenzeCertificazioni from "./LicenzeCertificazioni";
-import Volontariato from "./Volontariato";
+import InformationProfile from "./ProfilePage/InformationProfile";
+import Banner from "./ProfilePage/Banner"
+import Attivita from "./ProfilePage/Attivita";
+import Esperienza from "./ProfilePage/Esperienza";
+import Formazione from "./ProfilePage/Formazione";
+import LicenzeCertificazioni from "./ProfilePage/LicenzeCertificazioni";
+import Volontariato from "./ProfilePage/Volontariato";
 import ColonnaDestra from "./ColonnaDestra";
-import Compentenza from "./Compentenza";
-import Referenza from "./Referenza";
-import Pubblicazioni from "./Pubblicazioni";
-import Lingue from "./Lingue";
-import Interessi from "./Interessi";
+import Compentenza from "./ProfilePage/Compentenza";
+import Referenza from "./ProfilePage/Referenza";
+import Pubblicazioni from "./ProfilePage/Pubblicazioni";
+import Lingue from "./ProfilePage/Lingue";
+import Interessi from "./ProfilePage/Interessi";
 
 const ProfilePage = function () {
   return (
