@@ -1,4 +1,6 @@
 import Card from 'react-bootstrap/Card';
+import Form from 'react-bootstrap/Form';
+import { Container, Row, Col } from "react-bootstrap";
 import { useEffect, useState } from "react";
 
 function CreatePost() {
@@ -38,11 +40,25 @@ function CreatePost() {
           }, []);
   return (
     <Card>
-      <Card.Body><img style={{width:'55px',height:'55px'}}
+      <Card.Body>
+        
+        <img style={{width:'55px',height:'55px'}}
             src={profileData?.image}
             alt="pic-profile"
             className="rounded-circle"
           /></Card.Body>
+         <Form className='d-inline  mx-3 '>
+        <Row>
+          <Col xs="auto">
+            <Form.Control id='search'
+              type="text"
+              placeholder="Crea un post"
+              className=" mr-sm-2 rounded-pill "
+            />
+            
+          </Col>
+          </Row>
+          </Form>
     </Card>
   );
 }
