@@ -1,6 +1,7 @@
 import Card from "react-bootstrap/Card";
 import { Row, Col } from "react-bootstrap";
 import { useState } from "react";
+import "../../../assets/ButtonsHover.css"
 
 function Post1() {
   const [connected, setConnected] = useState(false);
@@ -81,20 +82,20 @@ function Post1() {
       )}
       <Card.Footer className="bg-white">
         <Row xs={4} className="text-center mt-2">
-          <Col>
-              <div onClick={() => setLiked(!liked)} style={{ cursor: "pointer" }}>
+          <Col className="referenza-buttons rounded-1">
+            <div onClick={() => setLiked(!liked)} style={{ cursor: "pointer" }}>
               <i
-              className={liked ? "bi bi-hand-thumbs-up-fill" : "bi bi-hand-thumbs-up"}
-              style={{
-              color: liked ? 
-              "blue" 
-              :"gray",
-            }}
-            ></i>
+                className={liked ? "bi bi-hand-thumbs-up-fill" : "bi bi-hand-thumbs-up"}
+                style={{
+                  color: liked ?
+                    "blue"
+                    : "gray",
+                }}
+              ></i>
             </div>
             <div style={{ fontSize: "0.9rem" }}>Consiglia</div>
           </Col>
-          <Col>
+          <Col className="referenza-buttons rounded-1">
             <div
               onClick={openCommenti}
               className="d-flex flex-column"
@@ -103,11 +104,11 @@ function Post1() {
               <span>Commenta</span>
             </div>
           </Col>
-          <Col>
+          <Col className="referenza-buttons rounded-1">
             <i className="bi bi-shuffle"></i>
             <div style={{ fontSize: "0.9rem" }}>Diffondi il post</div>
           </Col>
-          <Col>
+          <Col className="referenza-buttons rounded-1">
             <i className="bi bi-send-fill"></i>
             <div style={{ fontSize: "0.9rem" }}>Invia</div>
           </Col>
