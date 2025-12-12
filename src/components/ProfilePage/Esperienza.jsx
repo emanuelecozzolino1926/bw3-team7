@@ -5,10 +5,11 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
+import FileInput from "@siddjain/react-bootstrap-file-input";
 
 const Esperienza = (props) => {
   const [expData, setExpData] = useState(null);
-
+  const [file, setFile] = useState(null);
   const [experience, setExperience] = useState({
     role: "",
     company: "",
@@ -163,8 +164,7 @@ const Esperienza = (props) => {
           <div>
             <Button
               className="me-4 text-dark fs-4 border-0 bg-white"
-              onClick={() => setShowAdd(true)}
-            >
+              onClick={() => setShowAdd(true)}>
               <i className="bi bi-plus-circle"></i>
             </Button>
 
@@ -400,7 +400,9 @@ const Esperienza = (props) => {
                     }
                   />
                 </InputGroup>
-                <InputGroup size="sm" className="mb-3">
+                <InputGroup
+                  size="sm"
+                  className="mb-3 d-flex align-items-center gap-2">
                   <InputGroup.Text id="input-image">Immagine</InputGroup.Text>
                   <Form.Control
                     placeholder="Inserisci link immagine"
@@ -414,6 +416,27 @@ const Esperienza = (props) => {
                       }))
                     }
                   />
+                  <Form.Group controlId="formFileSm">
+                    <Form.Control
+                      type="file"
+                      size="sm"
+                      placeholder="Oppure carica un'immagine"
+                      accept=".png,.jpg,.jpeg,.pdf"
+                      value={() => {
+                        <FileInput
+                          maxFileCount={3}
+                          maxFileSize={100000}
+                          accept=".png,.jpg,.jpeg"
+                        />;
+                      }}
+                      onChange={(e) =>
+                        setExperience((prev) => ({
+                          ...prev,
+                          image: e.target.value,
+                        }))
+                      }
+                    />
+                  </Form.Group>
                 </InputGroup>
               </Modal.Body>
 
@@ -432,8 +455,7 @@ const Esperienza = (props) => {
                       image: "",
                     });
                     setSelectedExpId(null);
-                  }}
-                >
+                  }}>
                   Chiudi
                 </Button>
                 <Button variant="primary" onClick={editExp}>
