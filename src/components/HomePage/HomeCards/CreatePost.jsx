@@ -100,6 +100,11 @@ function CreatePost({ setPosts }) {
                   onChange={(e) => setPost({ ...post, text: e.target.value })}
                 />
               </Col>
+              <Col>
+                <Button className="px-3 rounded-2"
+                  onClick={savePost}
+                >Pubblica</Button>
+              </Col>
             </Row>
           </Form>
         </div>
@@ -140,7 +145,6 @@ function CreatePost({ setPosts }) {
         </Button>
         <Button
           variant="link"
-          onClick={savePost}
           className="referenza-buttons text-decoration-none text-dark fs-6 py-2 px-3 ms-3 border-0 rounded-0 mt-0 fs-6 fw-bold rounded-1"
         >
           <svg
