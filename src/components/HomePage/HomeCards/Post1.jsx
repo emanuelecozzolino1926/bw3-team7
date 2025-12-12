@@ -7,6 +7,8 @@ function Post1() {
   const [showCommentBox, setShowCommentBox] = useState(false);
   const [commentText, setCommentText] = useState("");
   const [commenti, setCommenti] = useState([]);
+  const [liked, setLiked] = useState(false);
+
   const toggleButton = () => {
     setConnected((prev) => !prev);
   };
@@ -80,7 +82,14 @@ function Post1() {
       <Card.Footer className="bg-white">
         <Row xs={4} className="text-center mt-2">
           <Col>
-            <i className="bi bi-hand-thumbs-up"></i>
+              <div onClick={() => setLiked(!liked)} style={{ cursor: "pointer" }}>
+              <i
+    className={liked ? "bi bi-hand-thumbs-up-fill" : "bi bi-hand-thumbs-up"}
+    style={{
+      color: liked ? "blue" : "gray",
+    }}
+    ></i>
+    </div>
             <div style={{ fontSize: "0.9rem" }}>Consiglia</div>
           </Col>
           <Col>
