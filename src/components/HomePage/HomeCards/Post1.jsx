@@ -45,7 +45,6 @@ function Post1() {
               onClick={toggleButton}>
               {connected ? <i className="bi bi-check2"> Seguito</i> : "+ Segui"}
             </button>
-            {/* Funziona a intermittenza, da aggiustare!!! */}
           </Col>
         </Row>
         <p className="mt-2">Il Tour è stato fantastico, #VivaPupone</p>
@@ -86,10 +85,11 @@ function Post1() {
           </Col>
           <Col>
             <div
+              onClick={openCommenti}
               className="d-flex flex-column"
               style={{ fontSize: "0.9rem", cursor: "pointer" }}>
               <i className="bi bi-chat-left-dots"></i>
-              <span onClick={openCommenti}>Commenta</span>
+              <span>Commenta</span>
             </div>
           </Col>
           <Col>
