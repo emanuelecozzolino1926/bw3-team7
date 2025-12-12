@@ -8,8 +8,12 @@ import ColonnaDestra from "./ColonnaDestra";
 import FooterHome from "./HomePage/FooterHome";
 import Consigliati from "./HomePage/Consigliati";
 import Post1 from "./HomePage/HomeCards/Post1";
+import { useState } from "react";
+import PostList from "./HomePage/PostList";
 
 const Home = function () {
+  const [posts, setPosts] = useState([]);
+
   return (
     <>
       <Container>
@@ -18,8 +22,9 @@ const Home = function () {
             <LeftCards />
           </Col>
           <Col className="col-lg-5 col-md-7">
-            <CreatePost />
-            <Post1 />
+            <CreatePost setPosts={setPosts} />
+            <Post1 posts={posts} />
+            <PostList />
             <Consigliati people={3} title="Consigli per te" />
           </Col>
           <Col className="d-none d-lg-block col-lg-3 ">
