@@ -25,20 +25,6 @@ const PostList = () => {
     }));
   };
 
-/*   const likeButton = (id) => {
-    setLiked((prev) => ({
-      ...prev,
-      [id]: !prev[id],
-    }));
-  };
-
-  const openCommenti = (id) => {
-    setShowCommentBox((prev) => ({
-      ...prev,
-      [id]: !prev[id],
-    }));
-  }; */
-
   const postaCommento = (id) => {
     const text = commentText[id]?.trim();
     if (!text) return;
