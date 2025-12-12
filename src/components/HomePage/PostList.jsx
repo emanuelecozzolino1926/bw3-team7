@@ -12,23 +12,48 @@ const PostList = () => {
 
   const [posts, setPosts] = useState([]);
 
-  const [connected, setConnected] = useState(false);
-  const [showCommentBox, setShowCommentBox] = useState(false);
-  const [commentText, setCommentText] = useState("");
-  const [commenti, setCommenti] = useState([]);
-  const [liked, setLiked] = useState(false);
+  const [connected, setConnected] = useState({});
+  const [showCommentBox, setShowCommentBox] = useState({});
+  const [commentText, setCommentText] = useState({});
+  const [commenti, setCommenti] = useState({});
+  const [liked, setLiked] = useState({});
 
-  const toggleButton = () => {
-    setConnected((prev) => !prev);
+  const toggleButton = (type, id) => {
+    type((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
   };
-  const openCommenti = () => {
-    setShowCommentBox((prev) => !prev);
+
+/*   const likeButton = (id) => {
+    setLiked((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
   };
-  const postaCommento = () => {
-    if (commentText.trim() === "") return;
-    setCommenti((prev) => [...prev, commentText]);
-    setCommentText("");
+
+  const openCommenti = (id) => {
+    setShowCommentBox((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
+  }; */
+
+  const postaCommento = (id) => {
+    const text = commentText[id]?.trim();
+    if (!text) return;
+
+    setCommenti((prev) => ({
+      ...prev,
+      [id]: [...(prev[id] || []), text],
+    }));
+
+    setCommentText((prev) => ({
+      ...prev,
+      [id]: "",
+    }));
   };
+
   const getPostList = () => {
     fetch(apiUrl, {
       headers: {
@@ -112,9 +137,8 @@ const PostList = () => {
                   </button>
                 <button
                   className="btn btn-outline-primary btn-sm fw-semibold rounded-4"
-                  onClick={toggleButton}
-                >
-                  {connected ? (
+                  onClick={() => toggleButton(setConnected, post._id)}>
+                  {connected[post._id] ? (
                     <i className="bi bi-check2"> Seguito</i>
                   ) : (
                     "+ Segui"
@@ -126,9 +150,9 @@ const PostList = () => {
             <p className="mt-2">{post.text}</p>
           </Card.Body>
 
-          {commenti.length > 0 && (
+          {commenti[post._id]?.length > 0 && (
             <div className="border-top p-2">
-              {commenti.map((c, i) => (
+              {commenti[post._id].map((c, i) => (
                 <p key={i} className="m-0">
                   {c}
                 </p>
@@ -136,18 +160,21 @@ const PostList = () => {
             </div>
           )}
 
-          {showCommentBox && (
+          {showCommentBox[post._id] && (
             <div className="border-top p-2">
               <textarea
                 className="form-control"
                 placeholder="Scrivi un commento..."
-                value={commentText}
-                onChange={(e) => setCommentText(e.target.value)}
-              ></textarea>
+                value={commentText[post._id] || ""}
+                onChange={(e) =>
+                  setCommentText((prev) => ({
+                    ...prev,
+                    [post._id]: e.target.value,
+                  }))
+                }></textarea>
               <button
                 className="btn btn-primary btn-sm mt-2"
-                onClick={postaCommento}
-              >
+                onClick={() => postaCommento(post._id)}>
                 Posta
               </button>
             </div>
@@ -157,29 +184,26 @@ const PostList = () => {
             <Row xs={4} className="text-center mt-2">
               <Col>
                 <div
-                  onClick={() => setLiked(!liked)}
-                  style={{ cursor: "pointer" }}
-                >
+                  onClick={() => toggleButton(setLiked, post._id)}
+                  style={{ cursor: "pointer" }}>
                   <i
                     className={
-                      liked
+                      liked[post._id]
                         ? "bi bi-hand-thumbs-up-fill"
                         : "bi bi-hand-thumbs-up"
                     }
                     style={{
-                      color: liked ? "blue" : "gray",
-                    }}
-                  ></i>
+                      color: liked[post._id] ? "blue" : "gray",
+                    }}></i>
                 </div>
                 <div style={{ fontSize: "0.9rem" }}>Consiglia</div>
               </Col>
 
               <Col>
                 <div
-                  onClick={openCommenti}
+                  onClick={() => toggleButton(setShowCommentBox, post._id)}
                   className="d-flex flex-column"
-                  style={{ fontSize: "0.9rem", cursor: "pointer" }}
-                >
+                  style={{ fontSize: "0.9rem", cursor: "pointer" }}>
                   <i className="bi bi-chat-left-dots"></i>
                   <span>Commenta</span>
                 </div>
