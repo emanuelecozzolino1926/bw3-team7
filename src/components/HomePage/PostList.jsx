@@ -18,13 +18,14 @@ const PostList = () => {
   const [commenti, setCommenti] = useState({});
   const [liked, setLiked] = useState({});
 
-  const toggleButton = (id) => {
-    setConnected((prev) => ({
+  const toggleButton = (type, id) => {
+    type((prev) => ({
       ...prev,
       [id]: !prev[id],
     }));
   };
-  const likeButton = (id) => {
+
+/*   const likeButton = (id) => {
     setLiked((prev) => ({
       ...prev,
       [id]: !prev[id],
@@ -36,7 +37,7 @@ const PostList = () => {
       ...prev,
       [id]: !prev[id],
     }));
-  };
+  }; */
 
   const postaCommento = (id) => {
     const text = commentText[id]?.trim();
@@ -133,7 +134,7 @@ const PostList = () => {
               <Col xs="auto">
                 <button
                   className="btn btn-outline-primary btn-sm fw-semibold rounded-4"
-                  onClick={() => toggleButton(post._id)}>
+                  onClick={() => toggleButton(setConnected, post._id)}>
                   {connected[post._id] ? (
                     <i className="bi bi-check2"> Seguito</i>
                   ) : (
@@ -180,7 +181,7 @@ const PostList = () => {
             <Row xs={4} className="text-center mt-2">
               <Col>
                 <div
-                  onClick={() => likeButton(post._id)}
+                  onClick={() => toggleButton(setLiked, post._id)}
                   style={{ cursor: "pointer" }}>
                   <i
                     className={
@@ -197,7 +198,7 @@ const PostList = () => {
 
               <Col>
                 <div
-                  onClick={() => openCommenti(post._id)}
+                  onClick={() => toggleButton(setShowCommentBox, post._id)}
                   className="d-flex flex-column"
                   style={{ fontSize: "0.9rem", cursor: "pointer" }}>
                   <i className="bi bi-chat-left-dots"></i>
