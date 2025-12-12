@@ -14,7 +14,7 @@ const PostList = () => {
 
   const [connected, setConnected] = useState({});
   const [showCommentBox, setShowCommentBox] = useState({});
-  const [commentText, setCommentText] = useState("");
+  const [commentText, setCommentText] = useState({});
   const [commenti, setCommenti] = useState({});
   const [liked, setLiked] = useState({});
 
@@ -39,12 +39,18 @@ const PostList = () => {
   };
 
   const postaCommento = (id) => {
-    if (commentText.trim() === "") return;
+    const text = commentText[id]?.trim();
+    if (!text) return;
+
     setCommenti((prev) => ({
       ...prev,
-      [id]: commentText[id],
+      [id]: [...(prev[id] || []), text],
     }));
-    setCommentText("");
+
+    setCommentText((prev) => ({
+      ...prev,
+      [id]: "",
+    }));
   };
 
   const getPostList = () => {
@@ -155,8 +161,13 @@ const PostList = () => {
               <textarea
                 className="form-control"
                 placeholder="Scrivi un commento..."
-                value={commentText[post._id]}
-                onChange={(e) => setCommentText(e.target.value)}></textarea>
+                value={commentText[post._id] || ""}
+                onChange={(e) =>
+                  setCommentText((prev) => ({
+                    ...prev,
+                    [post._id]: e.target.value,
+                  }))
+                }></textarea>
               <button
                 className="btn btn-primary btn-sm mt-2"
                 onClick={() => postaCommento(post._id)}>
