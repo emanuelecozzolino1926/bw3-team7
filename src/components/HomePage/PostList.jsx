@@ -1,8 +1,8 @@
 import Card from "react-bootstrap/Card";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Button, Modal } from "react-bootstrap";
 import { useEffect, useState } from "react";
 
-const PostList = () => {
+const PostList = ({ posts, setPosts }) => {
   const apiUrl = "https://striveschool-api.herokuapp.com/api/posts/";
   const apiKey =
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTM3ZmU0NWQzMjJmNTAwMTUxMDc2YzIiLCJpYXQiOjE3NjUyNzcyNTMsImV4cCI6MTc2NjQ4Njg1M30.6vFhBSWn_BZLNsof5SqbWvb4UQfXAP1wchtNpfCrZmI";
@@ -10,7 +10,9 @@ const PostList = () => {
   const apiProfile = "https://striveschool-api.herokuapp.com/api/profile/me";
   const [profileData, setProfileData] = useState(null);
 
-  const [posts, setPosts] = useState([]);
+  const [selectedPost, setSelectedPost] = useState(null);
+  const [showPostEdit, setShowPostEdit] = useState(false);
+  const [postText, setPostText] = useState("");
 
   const [connected, setConnected] = useState({});
   const [showCommentBox, setShowCommentBox] = useState({});
@@ -90,6 +92,56 @@ const PostList = () => {
       });
   };
 
+  const openPostModal = (post) => {
+    setSelectedPost(post);
+    setPostText(post.text);
+    setShowPostEdit(true);
+  };
+
+  const closePostModal = () => setShowPostEdit(false);
+
+  const putPost = () => {
+    fetch(`${apiUrl}${selectedPost._id}`, {
+      method: "PUT",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ text: postText }),
+    })
+      .then((response) => {
+        if (response.ok) {
+          closePostModal();
+          getPostList();
+        } else {
+          throw new Error();
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const deletePost = () => {
+    fetch(`${apiUrl}${selectedPost._id}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+      },
+    })
+      .then((response) => {
+        if (response.ok) {
+          closePostModal();
+          getPostList();
+        } else {
+          throw new Error();
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   useEffect(() => {
     getBanner();
   }, []);
@@ -127,6 +179,12 @@ const PostList = () => {
                     "+ Segui"
                   )}
                 </button>
+                <Button
+                  variant="outline-secondary border-0 m2"
+                  onClick={() => openPostModal(post)}
+                >
+                  <i className="bi bi-pencil-square"></i>
+                </Button>
               </Col>
             </Row>
 
@@ -205,6 +263,37 @@ const PostList = () => {
           </Card.Footer>
         </Card>
       ))}
+      <Modal show={showPostEdit} onHide={closePostModal}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modifica post</Modal.Title>
+        </Modal.Header>
+
+        <Modal.Body>
+          <textarea
+            className="form-control"
+            value={postText}
+            onChange={(e) => setPostText(e.target.value)}
+          />
+        </Modal.Body>
+
+        <Modal.Footer className="d-flex justify-content-between">
+          <Button variant="danger" onClick={deletePost}>
+            Elimina
+          </Button>
+          <div>
+            <Button
+              className="m-2"
+              variant="secondary"
+              onClick={closePostModal}
+            >
+              Annulla
+            </Button>
+            <Button variant="primary" onClick={putPost}>
+              Salva
+            </Button>
+          </div>
+        </Modal.Footer>
+      </Modal>
     </>
   );
 };
