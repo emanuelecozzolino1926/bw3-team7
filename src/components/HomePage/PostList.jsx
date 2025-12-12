@@ -1,9 +1,17 @@
 import Card from "react-bootstrap/Card";
 import { Row, Col } from "react-bootstrap";
-import { useState, useEffect } from "react";
-import "../../../assets/ButtonsHover.css";
+import { useEffect, useState } from "react";
 
-function Post1({ posts }) {
+const PostList = () => {
+  const apiUrl = "https://striveschool-api.herokuapp.com/api/posts/";
+  const apiKey =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTM3ZmU0NWQzMjJmNTAwMTUxMDc2YzIiLCJpYXQiOjE3NjUyNzcyNTMsImV4cCI6MTc2NjQ4Njg1M30.6vFhBSWn_BZLNsof5SqbWvb4UQfXAP1wchtNpfCrZmI";
+
+  const apiProfile = "https://striveschool-api.herokuapp.com/api/profile/me";
+  const [profileData, setProfileData] = useState(null);
+
+  const [posts, setPosts] = useState([]);
+
   const [connected, setConnected] = useState(false);
   const [showCommentBox, setShowCommentBox] = useState(false);
   const [commentText, setCommentText] = useState("");
@@ -21,14 +29,34 @@ function Post1({ posts }) {
     setCommenti((prev) => [...prev, commentText]);
     setCommentText("");
   };
-
-  const apiUrl = "https://striveschool-api.herokuapp.com/api/profile/me";
-  const apiKey =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTM3ZmU0NWQzMjJmNTAwMTUxMDc2YzIiLCJpYXQiOjE3NjUyNzcyNTMsImV4cCI6MTc2NjQ4Njg1M30.6vFhBSWn_BZLNsof5SqbWvb4UQfXAP1wchtNpfCrZmI";
-  const [profileData, setProfileData] = useState(null);
+  const getPostList = () => {
+    fetch(apiUrl, {
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+      },
+    })
+      .then((response) => {
+        if (response.ok) {
+          console.log(`Connsso al server post ${response.status}`);
+          return response.json();
+        } else {
+          throw new Error(
+            `Non sono riuscito a connettermi al server post ${response.status}`
+          );
+        }
+      })
+      .then((data) => {
+        console.log(data);
+        const reverseUwu = [...data].reverse().slice(0, 50);
+        setPosts(reverseUwu);
+      })
+      .catch((error) => {
+        console.log(`Il server non è raggiungibile ${error}`);
+      });
+  };
 
   const getBanner = () => {
-    fetch(apiUrl, {
+    fetch(apiProfile, {
       headers: {
         Authorization: `Bearer ${apiKey}`,
       },
@@ -55,6 +83,9 @@ function Post1({ posts }) {
     getBanner();
   }, []);
 
+  useEffect(() => {
+    getPostList();
+  }, []);
   return (
     <>
       {posts.map((post) => (
@@ -71,7 +102,7 @@ function Post1({ posts }) {
               </Col>
               <Col>
                 <p className="m-0 fw-bold">{post.username}</p>
-                <p className="m-0 text-muted" style={{ fontSize: "0.9rem" }}>
+                <p className="text-muted" style={{ fontSize: "0.8rem" }}>
                   {new Date(post.createdAt).toLocaleString()}
                 </p>
               </Col>
@@ -88,8 +119,10 @@ function Post1({ posts }) {
                 </button>
               </Col>
             </Row>
+
             <p className="mt-2">{post.text}</p>
           </Card.Body>
+
           {commenti.length > 0 && (
             <div className="border-top p-2">
               {commenti.map((c, i) => (
@@ -99,6 +132,7 @@ function Post1({ posts }) {
               ))}
             </div>
           )}
+
           {showCommentBox && (
             <div className="border-top p-2">
               <textarea
@@ -115,6 +149,7 @@ function Post1({ posts }) {
               </button>
             </div>
           )}
+
           <Card.Footer className="bg-white">
             <Row xs={4} className="text-center mt-2">
               <Col>
@@ -135,6 +170,7 @@ function Post1({ posts }) {
                 </div>
                 <div style={{ fontSize: "0.9rem" }}>Consiglia</div>
               </Col>
+
               <Col>
                 <div
                   onClick={openCommenti}
@@ -145,10 +181,12 @@ function Post1({ posts }) {
                   <span>Commenta</span>
                 </div>
               </Col>
+
               <Col>
                 <i className="bi bi-shuffle"></i>
                 <div style={{ fontSize: "0.9rem" }}>Diffondi il post</div>
               </Col>
+
               <Col>
                 <i className="bi bi-send-fill"></i>
                 <div style={{ fontSize: "0.9rem" }}>Invia</div>
@@ -159,6 +197,6 @@ function Post1({ posts }) {
       ))}
     </>
   );
-}
+};
 
-export default Post1;
+export default PostList;
