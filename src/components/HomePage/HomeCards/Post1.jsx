@@ -1,6 +1,6 @@
 import Card from "react-bootstrap/Card";
 import { Row, Col } from "react-bootstrap";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../../../assets/ButtonsHover.css";
 
 function Post1({ posts }) {
