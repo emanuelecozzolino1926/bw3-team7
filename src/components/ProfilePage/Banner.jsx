@@ -9,6 +9,8 @@ const Banner = (props) => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [showEdit, setShowEdit] = useState(false);
+  const [formData, setFormData] = useState({});
 
   const apiUrl = "https://striveschool-api.herokuapp.com/api/profile/";
   const apiKey =
@@ -37,6 +39,41 @@ const Banner = (props) => {
       })
       .catch((error) => {
         console.log(`Impossibile accedere al server ${error}`);
+      });
+  };
+
+  const CloseEdit = () => setShowEdit(false);
+  const ShowEdit = () => {
+    setFormData(profileData);
+    setShowEdit(true);
+  };
+
+  const Change = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const putProfile = () => {
+    fetch(`${apiUrl}`, {
+      method: "PUT",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => {
+        if (response.ok) {
+          CloseEdit();
+          getBanner();
+        } else {
+          throw new Error();
+        }
+      })
+      .catch((error) => {
+        console.log(error);
       });
   };
 
@@ -112,6 +149,79 @@ const Banner = (props) => {
           <button className="px-3 rounded-5 py-2 border border-dark fw-bold d-none d-md-block">
             Altro
           </button>
+          <Button
+            className="px-3 rounded-5 py-2 border border-dark fw-bold d-none d-md-block bg-light text-black"
+            onClick={ShowEdit}
+          >
+            <i className="bi bi-person-fill"></i> Modifica profilo
+          </Button>
+
+          <Modal show={showEdit} onHide={CloseEdit}>
+            <Modal.Header closeButton>
+              <Modal.Title>Modifica profilo</Modal.Title>
+            </Modal.Header>
+
+            <Modal.Body>
+              <input
+                className="form-control mb-2"
+                name="name"
+                value={formData?.name || ""}
+                onChange={Change}
+                placeholder="Nome"
+              />
+              <input
+                className="form-control mb-2"
+                name="surname"
+                value={formData?.surname || ""}
+                onChange={Change}
+                placeholder="Cognome"
+              />
+              <input
+                className="form-control mb-2"
+                name="email"
+                value={formData?.email || ""}
+                onChange={Change}
+                placeholder="Email"
+              />
+              <input
+                className="form-control mb-2"
+                name="username"
+                value={formData?.username || ""}
+                onChange={Change}
+                placeholder="Username"
+              />
+              <input
+                className="form-control mb-2"
+                name="title"
+                value={formData?.title || ""}
+                onChange={Change}
+                placeholder="Titolo"
+              />
+              <input
+                className="form-control mb-2"
+                name="area"
+                value={formData?.area || ""}
+                onChange={Change}
+                placeholder="Area"
+              />
+              <textarea
+                className="form-control"
+                name="bio"
+                value={formData?.bio || ""}
+                onChange={Change}
+                placeholder="Bio"
+              />
+            </Modal.Body>
+
+            <Modal.Footer>
+              <Button variant="secondary" onClick={CloseEdit}>
+                Annulla
+              </Button>
+              <Button variant="primary" onClick={putProfile}>
+                Salva
+              </Button>
+            </Modal.Footer>
+          </Modal>
         </div>
       </div>
     </div>
