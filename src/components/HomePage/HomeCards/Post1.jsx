@@ -84,12 +84,14 @@ function Post1() {
           <Col>
               <div onClick={() => setLiked(!liked)} style={{ cursor: "pointer" }}>
               <i
-    className={liked ? "bi bi-hand-thumbs-up-fill" : "bi bi-hand-thumbs-up"}
-    style={{
-      color: liked ? "blue" : "gray",
-    }}
-    ></i>
-    </div>
+              className={liked ? "bi bi-hand-thumbs-up-fill" : "bi bi-hand-thumbs-up"}
+              style={{
+              color: liked ? 
+              "blue" 
+              :"gray",
+            }}
+            ></i>
+            </div>
             <div style={{ fontSize: "0.9rem" }}>Consiglia</div>
           </Col>
           <Col>
