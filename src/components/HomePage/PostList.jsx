@@ -107,6 +107,9 @@ const PostList = () => {
                 </p>
               </Col>
               <Col xs="auto">
+                <button className="btn btn-outline-secondary btn-sm rounded-4 me-2">
+                  <i className="bi bi-pencil-square"></i>
+                  </button>
                 <button
                   className="btn btn-outline-primary btn-sm fw-semibold rounded-4"
                   onClick={toggleButton}
