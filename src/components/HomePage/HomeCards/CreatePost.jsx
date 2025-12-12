@@ -89,10 +89,10 @@ function CreatePost({ setPosts }) {
             className="rounded-circle"
           />
         </div>
-        <div className="text-start flex-grow-1">
-          <Form className="d-inline  mx-3 ">
+        <div className="text-start flex-grow-1 ms-2">
+          <Form className="d-inline mx-3 ">
             <Row>
-              <Col xs="auto" className="flex-grow-1">
+              <Col xs="auto" className="flex-grow-1 ">
                 <Form.Control
                   type="text"
                   placeholder="Crea un post"

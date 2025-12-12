@@ -74,21 +74,23 @@ const Consigliati = ({ title, people }) => {
                             <Col>
                                 <div className="text-center mb-3 pe-5 d-flex justify-content-end">
                                     {people !== 1 && (
-                                        <button
-                                            onClick={() => {
-                                                toggleConnection(user._id);
-                                            }}
-                                            className="bg-transparent rounded-5 fw-bold my-3 border-primary p-2 text-primary"
-                                        >
-                                            <i className="bi bi-plus-lg text-primary p-1"></i>
-                                            {title === "Add your feed"
-                                                ? user.connected
-                                                    ? "Seguito"
-                                                    : "Segui"
-                                                : user.connected
-                                                    ? "Connected"
-                                                    : "Connect"}
-                                        </button>
+                                         <button
+                onClick={() => {
+                  toggleConnection(user._id);
+                }}
+                className="bg-transparent rounded-5 px-3 py-1 fw-bold mt-3 text-primary border-primary">
+                {title === "Aggiungi feed" ? (
+                  user.connected ? (
+                    <i className="bi bi-check2"> Seguito</i>
+                  ) : (
+                    <i className="bi bi-person-plus-fill"> Segui</i>
+                  )
+                ) : user.connected ? (
+                  <i className="bi bi-check2"> Seguito</i>
+                ) : (
+                  <i className="bi bi-person-plus-fill"> Collegati</i>
+                )}
+              </button>
                                     )}
                                 </div>
                             </Col>
