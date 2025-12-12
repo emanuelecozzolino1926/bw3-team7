@@ -8,7 +8,7 @@ function Post1() {
   const [commentText, setCommentText] = useState("");
   const [commenti, setCommenti] = useState([]);
   const toggleButton = () => {
-    setConnected(!connected);
+    setConnected((prev) => !prev);
   };
   const openCommenti = () => {
     setShowCommentBox((prev) => !prev);
@@ -40,7 +40,6 @@ function Post1() {
             </p>
           </Col>
           <Col xs="auto">
-
             <button
               className="btn btn-outline-primary btn-sm fw-semibold rounded-4"
               onClick={toggleButton}>
