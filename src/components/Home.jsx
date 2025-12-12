@@ -24,8 +24,8 @@ const Home = function () {
           <Col className="col-lg-5 col-md-7">
             <CreatePost setPosts={setPosts} />
             <Consigliati people={3} title="Consigli per te" />
-            <Post1 posts={posts} />
-            <PostList />
+            {/* <Post1 posts={posts} /> */}
+            <PostList posts={posts} setPosts={setPosts} />
           </Col>
           <Col className="d-none d-lg-block col-lg-3 ">
             <ColonnaDestra title="Rompicapo di oggi" people={1} />
