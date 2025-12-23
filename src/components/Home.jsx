@@ -7,7 +7,6 @@ import CreatePost from "./HomePage/HomeCards/CreatePost";
 import ColonnaDestra from "./ColonnaDestra";
 import FooterHome from "./HomePage/FooterHome";
 import Consigliati from "./HomePage/Consigliati";
-import Post1 from "./HomePage/HomeCards/Post1";
 import { useState } from "react";
 import PostList from "./HomePage/PostList";
 
@@ -15,26 +14,22 @@ const Home = function () {
   const [posts, setPosts] = useState([]);
 
   return (
-    <>
-      <Container>
-        <Row className="ms-2 primaHome ">
-          <Col className="col-md-4 col-lg-3 ms-lg-2 ">
-            <LeftCards />
-          </Col>
-          <Col className="col-lg-5 col-md-7">
-            <CreatePost setPosts={setPosts} />
-            <Consigliati people={3} title="Consigli per te" />
-            {/* <Post1 posts={posts} /> */}
-            <PostList posts={posts} setPosts={setPosts} />
-          </Col>
-          <Col className="d-none d-lg-block col-lg-3 ">
-            <ColonnaDestra title="Rompicapo di oggi" people={1} />
-            <ColonnaDestra title="Aggiungi feed" people={3} />
-            <FooterHome />
-          </Col>
-        </Row>
-      </Container>
-    </>
+    <Row className="ms-2 primaHome ">
+      <Col className="col-md-4 col-lg-3 ms-lg-2 ">
+        <LeftCards />
+      </Col>
+      <Col className="col-lg-5 col-md-7">
+        <CreatePost setPosts={setPosts} />
+        <Consigliati people={3} title="Consigli per te" />
+        {/* <Post1 posts={posts} /> */}
+        <PostList posts={posts} setPosts={setPosts} />
+      </Col>
+      <Col className="d-none d-lg-block col-lg-3 ">
+        <ColonnaDestra title="Rompicapo di oggi" people={1} />
+        <ColonnaDestra title="Aggiungi feed" people={3} />
+        <FooterHome />
+      </Col>
+    </Row>
   );
 };
 export default Home;
